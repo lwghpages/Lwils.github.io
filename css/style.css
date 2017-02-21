@@ -287,17 +287,17 @@ and (max-width: 768px) {
 }
 
 #testimonials #johnb {
-  background: url("Lwils.github.io/testimonial-johnb.jpg") no-repeat center center;
+  background-image: url("Lwils.github.io/testimonial-johnb.jpg") no-repeat center center;
   background-size: cover;
 }
 
 #testimonials #mcphersons {
-  background: url("Lwils.github.io/testimonial-mcphersons.jpg") no-repeat center center;
+  background-image: url("Lwils.github.io/testimonial-mcphersons.jpg") no-repeat center center;
   background-size: cover;
 }
 
 #testimonials #lorraines {
-  background: url("Lwils.github.io/testimonial-lorraines.jpg") no-repeat center center;
+  background-image: url("Lwils.github.io/testimonial-lorraines.jpg") no-repeat center center;
   background-size: cover;
 }
 
