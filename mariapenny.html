@@ -1,0 +1,439 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+   <!-- Bootstrap and Font Awesome css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>gmoneynogo</title>
+
+<style>
+@font-face {
+    font-family: "logieFont";
+    src: url(Gilroy-ExtraBold.otf);
+}
+
+@font-face {
+    font-family: 'logieDistrict';
+    src: url(DistTh__.otf);
+  }
+
+
+
+/*########1st*/
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Arimo", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #222;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bungee", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 17px;
+}
+
+a {
+  color: #EA1733;
+  text-decoration: none;
+}
+a:hover {
+  color: #15e8cc;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body > header {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background: rgba(34, 34, 34, 0.95);
+}
+
+header > nav[role="main"] {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  text-shadow: 0 -1px 0 rgba(34, 34, 34, 0.8);
+}
+header > nav[role="main"] .toggle {
+  font-size: 21px;
+  display: block;
+  margin-bottom: 10px;
+}
+header > nav[role="main"] h1 {
+  color: #dddddd;
+  margin: 0 2em 0;
+  padding: 20px 0;
+}
+header > nav[role="main"] ul {
+  list-style: none;
+  display: none;
+  padding: 20px 0;
+  width: 100%;
+}
+header > nav[role="main"] ul li {
+  display: block;
+}
+header > nav[role="main"] ul li a {
+  display: block;
+  padding: 20px 20px;
+  text-transform: uppercase;
+  color: #c8cec4;
+  text-align: center;
+}
+header > nav[role="main"] ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #15e8cc;
+}
+
+.hero {
+  height: 100vh;
+  width: 100vw;
+  padding-top: 60px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: url(https://dl2.pushbulletusercontent.com/iUaPY46jJfWbYUJ52LlUlAWfeq9Am4do/photo-1492632503949-a31d9972b400) center center no-repeat;
+  filter: hue-rotate(90deg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+.hero--image {
+  position: absolute;
+}
+.hero--contents {
+  border: 2px solid #ffffff;
+  padding: 80px;
+  text-align: center;
+}
+.hero--contents h1 {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  header > nav[role="main"] .toggle {
+    display: none;
+  }
+  header > nav[role="main"] ul {
+    width: auto;
+    display: inline-block;
+  }
+  header > nav[role="main"] ul li {
+    display: inline-block;
+  }
+  header > nav[role="main"] ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: #c8cec4;
+  }
+  header > nav[role="main"] ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #15e8cc;
+  }
+}
+
+/*#enddd*/
+
+#login-box {
+  position: relative;
+  margin: 5% auto;
+  width: 50vw;
+  height: 33vh;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 28px;
+}
+
+input[type="text"],
+input[type="password"] {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-bottom: 2px solid #16a085;
+  color: #16a085;
+  transition: 0.2s ease;
+}
+
+input[type="submit"] {
+  margin-top: 28px;
+  width: 120px;
+  height: 32px;
+  background: #16a085;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+
+.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 4px;
+  width: 20rem;
+  height: 30rem;
+  background: url('#');
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 2px 2px 0;
+
+}
+
+.right .loginwith {
+
+  display: block;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #FFF;
+  text-align: center;
+}
+
+button.social-signin {
+
+ margin-top: -200px;
+ margin-bottom: 5px;
+  width: 220px;
+  height: 36px;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+button.social-signin:hover,
+button.social-signin:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease;
+}
+
+button.social-signin.facebook {
+  background: #32508E;
+}
+
+button.social-signin.twitter {
+  background: #55ACEE;
+}
+
+button.social-signin.google {
+  background: #DD4B39;
+}
+
+@media (max-width: 450px){
+
+.loginwith {margin-left: 25vw !important;}
+
+.social-signin {margin-left: 24.33vw;max-width: 13rem;}
+}
+
+#butbutton {margin-left: -1vw;}
+
+
+#buttext {font-size: 0.7em; color: #fff !important;}
+}
+</style>
+</head>
+<body>
+<!-- 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  This experiment is me trying out some
+  cool stuff with css3 filter and
+  some jQuery mouse movement and
+  position detection. It's... trippy.
+
+  -= Jasper =-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+
+<!-- include 2 google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Bungee|Arimo" rel="stylesheet">
+
+<header>
+  <nav role="main">
+    <h1><a href="javascript:location.reload();">Cam📸splash.com</a></h1>
+    <ul>
+      <li><a href="#">Get Tokens</a></li>
+      <li><a href="#">Page2</a></li>
+      <li><a href="#">SIGN UP</a></li>
+      <li><a href="#">Page4</a></li>
+      <li><a href="#">Page5</a></li>
+      <li><a href="#">Help?</a></li>
+    </ul>
+    <a href="#" class="toggle" title="toggle menu">&#8803; <span>open</span><span style="display: none;">close</span> menu</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero--contents">
+    <h1 style="color: #ffffff;margin-top: -65px;">Sexy Cam Babes </h1>
+    <p style="color: #f90;">Join The Fun</p>
+    <p><a id='butbutton' href="#" style="background-color: #000;border: 3px solid #3cc;padding: 9px 15px 9px 15px;letter-spacing: 1px;margin-top: 5px;"> <strong id='buttext'>SIGN UP TODAY FOR FREE</strong> </a>
+      <br></p>
+     
+    <div id="workin" style="background-color: transparent;width: 100%;height: 25vh;">
+      <div id="workin2" >
+<div id="login-box" style="opacity: 0.95;">
+  <!--<div class="left">
+    <h1>Sign up</h1>
+    
+    <input type="text" name="username" placeholder="Username" />
+    <input type="text" name="email" placeholder="E-mail" />
+    <input type="password" name="password" placeholder="Password" />
+    <input type="password" name="password2" placeholder="Retype password" />
+    
+    <input type="submit" name="signup_submit" value="Sign me up" />
+  </div>-->
+  
+  <div class="right">
+    <span class="loginwith" style="color: #f00;font-family: 'logieDistrict';margin-top: -1px;line-height: 35px;letter-spacing: 3px;"> <br />SIGN IN </span>
+    
+    <button class="social-signin facebook"><i style="padding: 5px 7px 5px 7px;" class="fa fa-facebook"></i> &nbsp; Log in with Facebook</button>
+    <button class="social-signin twitter"><i style="padding: 5px 7px 5px 0;margin-left: -8px;" class="fa fa-twitter"></i> &nbsp;Log in with Twitter</button>
+    <button class="social-signin google"><i style="padding: 5px 7px 5px 7px;" class="fa fa-google-plus"></i> &nbsp;Log in with Google+</button>
+  </div>
+  <!--<div class="or" style="font-family: 'logieFont';letter-spacing: 0.1em;">SIGN IN OR JOIN FOR FREE TODAY!</div>-->
+</div>
+        <!-- <img id="trymid" class="img-responsive" style="position: absolute;width: 16rem;margin-left: 5vw; margin-top: -37.3vh;" src='https://image.freepik.com/free-vector/origami-banner-for-sales-discounts_1126-108.jpg'/> -->
+      </div><!--/workin2-->
+    </div><!--/workin-->
+     <div id="trybottom" style="position: absolute;background-color: transparent;z-index: 999;margin-left: -25vw;margin-top: 12vh;"><strong style="font-size: 3em;color: #fff;">CREATE YOUR <span class='none' style="color: #00f;">FREE</span> ACCOUNT NOW, IT TAKES 
+ONLY A FEW SECONDS</strong></div>
+  </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script>jQuery(function() {
+  jQuery('.toggle').on("click", function() {
+    var prevElm = jQuery(this).prev('ul');
+    var spanToggle = jQuery(this).find('span');
+    prevElm.fadeToggle();
+    spanToggle.toggle();
+    return false;
+  })
+  
+    var mousePos = { x: -1, y: -1 };
+    jQuery(document).mousemove(function(event) {
+      mousePos.x = event.pageX;
+      jQuery('.hero, nav h1 a').css
+      ({ 
+        "filter": "hue-rotate("+mousePos.x+"deg)" 
+       });
+    });
+
+    // ELSEWHERE, your code that needs to know the mouse position without an event
+    if (mousePos.x < 10) {
+        // ....
+    }
+});</script>
+</body>
+</html>
