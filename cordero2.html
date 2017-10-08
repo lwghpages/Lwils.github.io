@@ -1,0 +1,556 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+   <!-- Bootstrap and Font Awesome css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+<title>Cordero H&H Promotions</title>
+
+<style>
+@font-face {
+    font-family: "logieFont";
+    src: url(Gilroy-ExtraBold.otf);
+}
+
+@font-face {
+    font-family: 'logieDistrict';
+    src: url(DistTh__.otf);
+  }
+
+/* Variables */
+/* Reset */
+*,
+::after,
+::before {
+  -webkit-backface-visibility: hidden;
+  background-repeat: no-repeat;
+  box-sizing: inherit;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+::after,
+::before {
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
+::-moz-selection {
+  background-color: #b3d4fc;
+  color: #111;
+  text-shadow: none;
+}
+
+::selection {
+  background-color: #b3d4fc;
+  color: #111;
+  text-shadow: none;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  background: #111;
+  color: #121212;
+  font: 16px/1.5 "Raleway", sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  border: 0;
+  height: auto;
+  max-width: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+[aria-disabled] {
+  cursor: default;
+}
+
+/* Loading */
+
+
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.9);
+  left: 0;
+  padding: 1px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header-container {
+ /* margin-left: -100px !important; */
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  padding-right: 0;
+  margin-left: -32px;
+  height: 100px;
+}
+
+/* Nav */
+nav ul {
+  display: flex;
+}
+
+nav li {
+  font: 1.5rem/1 "Roboto Slab", serif;
+  padding: 10px 0;
+}
+nav li:first-child {
+  border-right: 1px solid #680403;
+  margin-right: 5px;
+  padding-right: 5px;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+nav a:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+.day-inner-container {
+  margin-top: 14vh;
+  background-color: #444;
+  display: flex;
+  height: 15%;
+  position: relative;
+  transition: opacity 1s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.day-inner-2 {
+  margin-top: 14vh;
+  background-color: #444;
+  display: flex;
+  height: 15%;
+  position: relative;
+  transition: opacity 1s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+
+.day-inner-container>#booboo { 
+
+  text-align: center;
+  margin: auto;
+  position: relative;
+  margin-top: 20vh;
+ }
+
+.root {
+  height: 8000px;
+  position: relative;
+  width: 100%;
+}
+
+
+
+/*begin my artists slider */
+.recipe-wrapper nav {
+  top: 370px;
+  position: relative;
+  text-align: center;
+}
+
+.recipe-wrapper ul {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  pointer-events: none;
+}
+.recipe-wrapper ul.current {
+  pointer-events: auto;
+}
+.recipe-wrapper ul li {
+  margin: 0;
+  padding: 0;
+  height: 350px;
+  width: 20%;
+  float: left;
+  flex: 1;
+  background-color: #004f90;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: all .3s ease-in-out;
+  transform: translateX(600%);
+  opacity: 0;
+}
+.recipe-wrapper ul li .image {
+  background-size: cover;
+  background-position: center;
+  height: 80%;
+  flex: 3;
+}
+.recipe-wrapper ul li .caption {
+  flex: 0;
+  content-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease-in-out;
+  opacity: 0;
+  padding: 0 20px;
+  text-align: center;
+  font-size: .9em;
+  line-height: 1.4;
+  color: #fff;
+  text-decoration: none;
+}
+.recipe-wrapper ul li:hover .caption {
+  padding: 10px 20px;
+  flex: 1;
+  opacity: 1;
+}
+.recipe-wrapper ul:first-child li {
+  animation: scaleUp 350ms ease-in-out both;
+}
+.recipe-wrapper ul.animate-in li {
+  animation: animateIn 350ms ease-in-out both;
+}
+.recipe-wrapper ul.animate-out li {
+  animation: animateOut 350ms ease-in-out both;
+}
+@keyframes animateIn {
+  0% {
+    transform: translateX(-600%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes animateOut {
+  0% {
+    transform: translateX(600%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes scaleUp {
+  0% {
+    transform: translateX(0) scale(0);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+.recipe-wrapper ul:first-child li:nth-child(1), .recipe-wrapper ul.animate-out li:nth-child(1), .recipe-wrapper ul.animate-in li:nth-child(1) {
+  animation-delay: 90ms;
+}
+.recipe-wrapper ul:first-child li:nth-child(2), .recipe-wrapper ul.animate-out li:nth-child(2), .recipe-wrapper ul.animate-in li:nth-child(2) {
+  animation-delay: 180ms;
+}
+.recipe-wrapper ul:first-child li:nth-child(3), .recipe-wrapper ul.animate-out li:nth-child(3), .recipe-wrapper ul.animate-in li:nth-child(3) {
+  animation-delay: 270ms;
+}
+.recipe-wrapper ul:first-child li:nth-child(4), .recipe-wrapper ul.animate-out li:nth-child(4), .recipe-wrapper ul.animate-in li:nth-child(4) {
+  animation-delay: 360ms;
+}
+.recipe-wrapper ul:first-child li:nth-child(5), .recipe-wrapper ul.animate-out li:nth-child(5), .recipe-wrapper ul.animate-in li:nth-child(5) {
+  animation-delay: 450ms;
+}
+/*end my artists*/
+.gokart-calendar {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.calendar-meta {
+  background-color: #e6e6e6;
+  padding: .5rem;
+}
+
+.week-title {
+  margin: 0;
+  font-size: 1.2em;
+}
+.week-title__subtitle {
+  font-weight: 300;
+}
+
+.week {
+  width: 100%;
+}
+
+.day {
+  color: #fff;
+  margin: 2rem 0 0;
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.day__entry {
+  padding: .5rem;
+}
+.day__entry_double-track {
+  background-color: #b82025;
+}
+.day__entry_double-track:nth-child(odd) {
+  background-color: #2a2a2a;
+
+}
+.day__entry_large-track {
+  background-color: #2a2a2a;
+}
+.day__entry_large-track:nth-child(odd) {
+  background-color: #a2a2a2;
+}
+.day__entry__date {
+  font-size: .65em;
+}
+.day__entry__track-name {
+  margin: .25rem 0 0;
+  font-size: .75rem;
+}
+.day .day-name {
+  position: absolute;
+  left: 0;
+  top: -1.5rem;
+  color: #333;
+  text-transform: capitalize;
+}
+.day .closing-time {
+  position: absolute;
+  right: .5rem;
+  font-size: 0.65em;
+  top: 1rem;
+}
+
+  </style>
+  <body>
+  <div class='root'>
+    <header>
+      <div class='container'>
+        <div class='header-container' >
+          <img class='logo' src='http://rs347.pbsrc.com/albums/p447/logothepogo1212/CORDEROFINALLOGOwhtand_zpsug43v5jc.png?w=480&h=480&fit=clip' alt='cordero logo' />
+          <nav style="margin-left: -20px;">
+            <ul>
+              <li>
+                <a style="color: #ccc;font-family:'logieDistrict'; letter-spacing: 1px;" href='#' target='_blank'>Back To Home</a>
+              </li>
+              <li>
+                <a style="color: #ccc;font-family: 'logieDistrict'; letter-spacing: 1px;" href='#' target='_blank'>Tickets</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+  <div class="day-inner-container" style="display: block;position: relative;margin-top: 100px;">
+    <div id="booboo" style="margin-left: 12px;display: block;/*FINAL-background-color: #444; */ background-color: #444;margin: auto;margin-top: 30px !important;">
+
+    <span style="color: #ddd; font-size: 2em;padding: 5px 7px 5px 7px;font-family: 'logieFont';" > VIDEOS  </span><br>
+  <iframe width="320" height="205" src="https://www.youtube.com/embed/r81jYc9rVuA" frameborder="0" allowfullscreen></iframe>
+  <iframe width="320" height="205" src="https://www.youtube.com/embed/r81jYc9rVuA" frameborder="0" allowfullscreen></iframe>
+  <iframe width="320" height="205" src="https://www.youtube.com/embed/r81jYc9rVuA" frameborder="0" allowfullscreen></iframe>
+    </div>
+<!---->
+    <div id="day-innner-2" style="display: block;position: relative;padding-top: 7px;text-align: center;">
+      <div id="booboo2" style="margin-left: 12px;display: block;/*FINAL-background-color: #444; */ background-color: #444;margin: auto;margin-top: 0 !important;">
+    
+  <iframe width="320" height="205" src="https://www.youtube.com/embed/r81jYc9rVuA" frameborder="0" allowfullscreen></iframe>
+  <iframe width="320" height="205" src="https://www.youtube.com/embed/r81jYc9rVuA" frameborder="0" allowfullscreen></iframe>
+  <iframe width="320" height="205" src="https://www.youtube.com/embed/r81jYc9rVuA" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+<!--/-->
+<!--arists-->
+
+<div class="recipe-wrapper" id="recipe-slider">
+  <ul>
+    <li class="item">
+      <div class="image" style="background-image: url(https://dl2.pushbulletusercontent.com/yT9MbljR0xMAet46zCDs1DgKGpuirb1N/IMG_4799.PNG);"></div>
+      <a href="#" class="caption"> UPS Official Video</a>
+    </li>
+    <li class="item">
+      <div class="image" style="background-image: url(https://dl2.pushbulletusercontent.com/PWGoe24a393F3QCmmVW9o5F342rACFgD/IMG_4798.PNG);"></div>
+      <a href="#" class="caption">Quam temere in vitiis</a>
+    </figure>
+    <li class="item">
+      <div class="image" style="background-image: url(https://dl2.pushbulletusercontent.com/BfV940mhoT48byiZVWCIBmCWs5bYtjNN/IMG_4796.PNG);"></div>
+      <a href="#" class="caption">Quam temere in vitiis</a>
+    </li>
+    <li class="item">
+      <div class="image" style="background-image: url(https://dl2.pushbulletusercontent.com/gg0jUdB6U5d9miOM0sL16bnEUk4zIdH0/pprtest.png);"></div>
+      <a href="#" class="caption">Quam temere in vitiis</a>
+    </li>
+    <li class="item">
+      <div class="image" style="background-image: url(https://dl2.pushbulletusercontent.com/x17gKgDRW7uHx5vWLpw0AkYBoQHoXEYk/IMG_4807.JPG);"></div>
+      <a href="#" class="caption">Quam temere in vitiis</a>
+    </li>
+  </ul>
+<ul>
+    <li class="item">
+      <div class="image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/24650/largeclick_gronkalssalat-med-grillost.jpg);"></div>
+      <a href="#" class="caption">Pellentesque habitant morbi tristique senectus et netus.</a>
+    </li>
+    <li class="item">
+      <div class="image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/24650/largeclick_Mandelpanerede-ostebidder2.jpg);"></div>
+      <a href="#" class="caption">Quam temere in vitiis</a>
+    </figure>
+    <li class="item">
+      <div class="image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/24650/largeclick_Grillet_halloumi_sandwich2.jpg);"></div>
+      <a href="#" class="caption">Quam temere in vitiis</a>
+    </li>
+    <li class="item">
+      <div class="image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/24650/largeclick_Chiliost_med_jordbar.jpg);"></div>
+      <a href="#" class="caption">Quam temere in vitiis</a>
+    </li>
+    <li class="item">
+      <div class="image" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/24650/largeclick_madbrod_med_domyati.jpg);"></div>
+      <a href="#" class="caption">Quam temere in vitiis</a>
+    </li>
+  </ul>
+<!--test span of 2 vids -->
+
+</div>
+
+
+<!--/artists-->
+<div class="gokart-calendar" style="margin-top: 400px;">
+ <!-- <header class="calendar-meta">
+    <h2 class="week-title">Nov 22nd <span class="week-title__subtitle"> Waka Flaka Flame</span></h2>
+  </header> -->
+  <div class="week">
+    <div class="day">
+      <div class="day__entry day__entry_double-track" data-start-time="10">
+        <span class="day__entry__date" style="font-size: 0.99em;">November 22nd</span>
+        <h4 class="day__entry__track-name" style="font-size: 0.75em;">CONGRESS THEATER <br><img  style='margin: auto;width: 100%;' src="https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.rap-up.com%2Fapp%2Fuploads%2F2014%2F12%2Fwaka-flocka.jpg&f=1" alt="Waka" class="img-responsive"></h4>
+      </div>
+      <div class="day__entry day__entry_large-track" data-start-time="15">
+        <span class="day__entry__date">Waka Flaka Flame</span>
+        <h4 class="day__entry__track-name"><a href="http://www.eventbrite.com">Buy Tickets</a></h4>
+      </div>
+      <div class="day__entry day__entry_large-track" data-start-time="22">
+        <span class="day__entry__date">kl. 22</span>
+        <h4 class="day__entry__track-name">Dobbelt bane</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div><!--/booboo-->
+  </div><!--/day-inner-container-->
+  
+    
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script>$(function() {
+  
+  $( '#recipe-slider ul:first' ).addClass('current');
+  
+  var lists = $( '#recipe-slider ul' );
+  var menuitems = $( '#recipe-slider nav a' );
+  
+  function matchListToNav() {
+    
+  };
+  
+  menuitems.each(function( index ) {
+    console.log( index + ": " + $( this ).text() );
+    
+    $( this ).click(function() {
+      $( this ).parent().siblings()
+        .removeClass('current')
+        .addClass("animate-out").delay(800).queue(function(next){
+          $(this).removeClass("animate-out");
+          next();
+        });
+
+      $( '#recipe-slider ul:eq('+index+')' )
+        .addClass("animate-in").delay(800).queue(function(next){
+          $(this).removeClass("animate-in")
+          .addClass('current');
+          next();
+        });
+    })
+  });
+  
+});
+</script>
+
+<script>$(".day__entry").each(function() {
+  var $this = $(this);
+  var $startTime = parseInt($this.data("start-time"))-9;
+  var $endTime = "";
+  if ($this.is(":last-child") === true) {
+    $endTime = 24;
+  } else {
+    $endTime = parseInt($this.next().data("start-time")) - 9;
+  }
+  
+  //console.log(typeof($startTime)+' '+$startTime);
+  $this.attr('style', 'grid-column-start:'+$startTime+';grid-column-end:'+$endTime+';');
+});
+</script>
+  </body>
+  </html>
