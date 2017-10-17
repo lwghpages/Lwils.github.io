@@ -1,0 +1,1247 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+   <!-- Bootstrap and Font Awesome css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+<title>Cordero H&H Promotions</title>
+
+<style>
+@font-face {
+    font-family: "logieFont";
+    src: url(Gilroy-ExtraBold.otf);
+}
+
+@font-face {
+    font-family: 'logieDistrict';
+    src: url(DistTh__.otf);
+  }
+
+ 
+.check_box:not(:checked),
+.check_box:checked {
+  position: absolute;
+  left: -9999px;
+}
+.check_box:not(:checked) + label,
+.check_box:checked + label {
+  position: relative;
+  color: #fff;
+  font-size: 12px;
+  padding-left: 25px;
+  cursor: pointer;
+}
+.check_box:not(:checked) + label span,
+.check_box:checked + label span {
+  position: relative;
+  top: 4px;
+}
+.check_box:not(:checked) + label:before,
+.check_box:checked + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #e1e1e1;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  -webkit-transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.check_box:not(:checked) + label:after,
+.check_box:checked + label:after {
+  content: "✔";
+  position: absolute;
+  top: 7px;
+  left: 4px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 0.8;
+  color: #fff;
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: opacity 0.3s ease, -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1), opacity 0.3s ease;
+  transition: transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1), opacity 0.3s ease, -webkit-transform 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+.check_box:not(:checked):hover + label:before,
+.check_box:checked:hover + label:before {
+  border-color: #65d8b9;
+}
+.check_box:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+.check_box:checked + label:before {
+  background-color: #65d8b9;
+  border-color: #65d8b9;
+}
+.check_box:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'logieDistrict';
+  line-height: 1.2;
+  background-color: #1a1a1a;
+}
+::-moz-selection {
+  background: #999;
+  color: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: #999;
+  color: #fff;
+  text-shadow: none;
+}
+::-webkit-selection {
+  background: #999;
+  color: #fff;
+  text-shadow: none;
+}
+.food_cta {
+  display: inline-block;
+  padding: 11px 28px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  position: relative;
+  border: 0;
+  border-radius: 1.4em;
+  color: #fff;
+}
+.food_cta:focus {
+  outline: none;
+}
+.nav_bar {
+  width: 88%;
+  max-width: 1024px;
+  margin: 70px auto 0 auto;
+  color: #b0b3c4;
+  padding-bottom: 38px;
+}
+.nav_bar:before,
+.nav_bar:after {
+  content: "";
+  display: table;
+}
+.nav_bar:after {
+  clear: both;
+}
+.nav_bar .nav_logo {
+  width: 150px;
+  float: left;
+  cursor: pointer;
+}
+.nav_bar .nav_logo span {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+.nav_bar .nav_logo #fork,
+.nav_bar .nav_logo #knife {
+  -webkit-transform: rotate(0deg) translateX(0);
+          transform: rotate(0deg) translateX(0);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: all 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: all 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+.nav_bar .nav_logo #fork path,
+.nav_bar .nav_logo #knife path {
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.nav_bar .nav_logo:hover #fork {
+  -webkit-transform: rotate(30deg) translateX(30px);
+          transform: rotate(30deg) translateX(30px);
+}
+.nav_bar .nav_logo:hover #fork path {
+  fill: #fff;
+}
+.nav_bar .nav_logo:hover #knife {
+  -webkit-transform: rotate(-30deg) translateX(-30px);
+          transform: rotate(-30deg) translateX(-30px);
+}
+.nav_bar .nav_logo:hover #knife path {
+  fill: #fff;
+}
+.nav_bar .nav_toggle {
+  float: right;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 15px 0;
+}
+.nav_bar .nav_toggle .toggle_name {
+  padding-left: 9px;
+  font-size: 11px;
+  position: relative;
+  left: 0;
+  color: #b0b3c4;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: color 0.25s ease, left 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: color 0.25s ease, left 0.2s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+.nav_bar .nav_toggle .toggle_name.is-open {
+  left: 100px;
+}
+.nav_bar .nav_toggle .hamb_toggle {
+  width: 25px;
+  height: 14px;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+.nav_bar .nav_toggle .hamb_toggle .line {
+  display: block;
+  background: #b0b3c4;
+  width: 25px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  border-radius: 1px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.nav_bar .nav_toggle .hamb_toggle .line.line-1 {
+  top: 0;
+}
+.nav_bar .nav_toggle .hamb_toggle .line.line-2 {
+  top: 50%;
+}
+.nav_bar .nav_toggle .hamb_toggle .line.line-3 {
+  top: 100%;
+}
+.nav_bar .nav_toggle .hamb_toggle:hover .line-1,
+.nav_bar .nav_toggle .hamb_toggle:focus .line-1 {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+}
+.nav_bar .nav_toggle .hamb_toggle:hover .line-3,
+.nav_bar .nav_toggle .hamb_toggle:focus .line-3 {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+.nav_bar .nav_toggle .hamb_toggle.is-open .line-1 {
+  -webkit-transform: translateY(7px) translateX(0) rotate(45deg);
+          transform: translateY(7px) translateX(0) rotate(45deg);
+}
+.nav_bar .nav_toggle .hamb_toggle.is-open .line-2 {
+  opacity: 0;
+}
+.nav_bar .nav_toggle .hamb_toggle.is-open .line-3 {
+  -webkit-transform: translateY(-7px) translateX(0) rotate(-45deg);
+          transform: translateY(-7px) translateX(0) rotate(-45deg);
+}
+.nav_bar .nav_toggle .hamb_toggle.is-open:hover .line {
+  background: #fff;
+}
+.nav_bar:hover .toggle_name {
+  color: #fff;
+}
+.nav_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  height: 100%;
+  z-index: 10;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.nav_overlay:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #676767;
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
+  -webkit-transition: opacity 0.25s ease-in-out, -webkit-transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: opacity 0.25s ease-in-out, -webkit-transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1), opacity 0.25s ease-in-out;
+  transition: transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1), opacity 0.25s ease-in-out, -webkit-transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+.nav_overlay:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: 51%;
+  height: 100%;
+  background-color: #676767;
+  -webkit-transform: translateX(150%);
+          transform: translateX(150%);
+  -webkit-transition: opacity 0.25s ease-in-out, -webkit-transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: opacity 0.25s ease-in-out, -webkit-transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1), opacity 0.25s ease-in-out;
+  transition: transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1), opacity 0.25s ease-in-out, -webkit-transform 0.4s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+.nav_overlay .fix_top {
+  position: fixed;
+  bottom: 40px;
+  right: 80px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 101;
+}
+.nav_overlay .fix_top svg {
+  width: 50px;
+  height: 50px;
+}
+.nav_overlay .fix_top svg path {
+  fill: #fff;
+}
+.nav_overlay .fix_top:hover {
+  bottom: 45px;
+}
+.nav_overlay .overlay_menu {
+  position: relative;
+  height: 70%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+  z-index: 100;
+}
+.nav_overlay .overlay_menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 40%;
+  margin-top: -170px;
+}
+.nav_overlay .overlay_menu ul li {
+  font-size: 0.685em;
+  display: block;
+  height: 25%;
+  height: calc(100% / 4);
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
+}
+.nav_overlay .overlay_menu ul li a {
+  display: block;
+  position: relative;
+  color: #fff;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  text-decoration: none;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.25s ease;
+  transition: -webkit-transform 0.25s ease;
+  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+}
+.nav_overlay .overlay_menu ul li a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0.6em;
+  content: "";
+  display: block;
+  height: 9px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  background: rgba(11,196,217,0.8);
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+  transition: transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.3s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+.nav_overlay .overlay_menu ul li a:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+.nav_overlay .overlay_menu ul li a:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+.nav_overlay .overlay_menu ul li:nth-child(2) a:after {
+  background: rgba(217,93,79,0.8);
+}
+.nav_overlay .overlay_menu ul li:nth-child(3) a:after {
+  background: rgba(233,208,57,0.8);
+}
+.nav_overlay .overlay_menu ul li:last-child a:after {
+  background: rgba(99,111,230,0.8);
+}
+.nav_overlay.is-open {
+  visibility: visible;
+  opacity: 0.8;
+}
+.nav_overlay.is-open:before,
+.nav_overlay.is-open:after {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+.nav_overlay.is-open .overlay_menu ul li {
+  -webkit-animation: fadeInRight 0.55s ease forwards;
+          animation: fadeInRight 0.55s ease forwards;
+  -webkit-animation-delay: 0.35s;
+          animation-delay: 0.35s;
+}
+.nav_overlay.is-open .overlay_menu ul li:nth-of-type(2) {
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
+}
+.nav_overlay.is-open .overlay_menu ul li:nth-of-type(3) {
+  -webkit-animation-delay: 0.55s;
+          animation-delay: 0.55s;
+}
+.nav_overlay.is-open .overlay_menu ul li:nth-of-type(4) {
+  -webkit-animation-delay: 0.65s;
+          animation-delay: 0.65s;
+}
+.blocks_container {
+  width: 88%;
+  max-width: 1024px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 50px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0px 8px 21px 0px rgba(50,50,50,0.5);
+  min-height: 30vh;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.blocks_container:before,
+.blocks_container:after {
+  content: "";
+  display: table;
+}
+.blocks_container:after {
+  clear: both;
+}
+.blocks_container:hover {
+  box-shadow: 0px 11px 48px 0px rgba(50,50,50,0.5);
+}
+.big_block,
+.medium_block,
+.small_block,
+.last_medium_block {
+  float: left;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.big_block:before,
+.medium_block:before,
+.small_block:before,
+.last_medium_block:before,
+.big_block:after,
+.medium_block:after,
+.small_block:after,
+.last_medium_block:after {
+  content: "";
+  display: table;
+}
+.big_block:after,
+.medium_block:after,
+.small_block:after,
+.last_medium_block:after {
+  clear: both;
+}
+.big_block {
+
+  width: 100%;
+  height: 420px;
+
+}
+.big_block .block_content {
+  margin-top: 10px;
+  height: 68.5vh;
+  float: right;
+  width: 100%;
+  text-align: right;
+  padding-right: 35px;
+  color: #fff;
+  text-shadow: 3px  solid #333;
+   /*background-image: url(https://image.freepik.com/free-psd/t-shirt-mock-up-design_1310-67.jpg);*/
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+
+    z-index: 99999;
+
+}
+.big_block .block_content h2 {
+  font-size: 48px;
+  margin-bottom: 0;
+}
+.big_block .block_content h2:before,
+.big_block .block_content h2:after {
+  content: "";
+  display: table;
+}
+.big_block .block_content h2:after {
+  clear: both;
+}
+.big_block .block_content h4 {
+  font-size: 21px;
+  width: 76%;
+  float: right;
+  font-weight: 300;
+  font-family: 'logieDistrict';
+}
+.big_block .block_content h4:before,
+.big_block .block_content h4:after {
+  content: "";
+  display: table;
+}
+.big_block .block_content h4:after {
+  clear: both;
+}
+.big_block .block_content .food_cta {
+  background-color: #e9d039;
+}
+.middle_block_container {
+  width: 100%;
+  height: 600px;
+}
+.middle_block_container:before,
+.middle_block_container:after {
+  content: "";
+  display: table;
+}
+.middle_block_container:after {
+  clear: both;
+}
+.middle_block_container .b_half {
+  height: 100%;
+  float: left;
+}
+.middle_block_container .b_half:before,
+.middle_block_container .b_half:after {
+  content: "";
+  display: table;
+}
+.middle_block_container .b_half:after {
+  clear: both;
+}
+.middle_block_container .b_half:first-child {
+  width: 40%;
+}
+.middle_block_container .b_half:last-child {
+  width: 60%;
+}
+.medium_block {
+  width: 100%;
+  height: 320px;
+}
+.medium_block.peas .block_content {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  top: 20px;
+  right: 0;
+  text-align: right;
+  color: #444;
+  padding: 5px 7px 5px 7px;
+  background-image: url(#);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  
+  background-size: cover;
+  }
+.medium_block.peas .block_content h2 {
+  font-size: 40px;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 7px;
+}
+.medium_block.peas .block_content h4 {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.5;
+  font-family: 'logieDistrict';
+}
+.medium_block.peas .block_content .food_cta {
+  background-color: #3e67c9;
+  font-size: 13px;
+  padding: 9px 24px;
+  margin-top: 17px;
+}
+.medium_block.medium_tall {
+  height: 600px;
+}
+.medium_block.medium_tall .block_content {
+  position: absolute;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  bottom: 60px;
+  left: 0;
+  color: #fff;
+  padding: 10px 20px;
+}
+.medium_block.medium_tall .block_content h2 {
+  font-size: 30px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.medium_block.medium_tall .block_content h4 {
+  font-size: 22px;
+  font-weight: 300;
+  margin-top: 0;
+  font-family: 'logieDistrict';
+}
+.medium_block.medium_tall .block_content .food_cta {
+  font-size: 13px;
+  padding: 10px 16px;
+  background-color: #4b1a3a;
+}
+.small_block {
+  width: 50%;
+  height: 280px;
+}
+.small_block .small_block_container {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.small_block .small_block_container h2 {
+  color: #fff;
+  font-size: 17px;
+  padding: 0 11px;
+}
+.small_block .small_block_container .food_cta {
+  background-color: #d95d4f;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  text-align: center;
+}
+.small_block .small_block_container .food_cta svg {
+  width: 40px;
+  height: 25px;
+  position: relative;
+  top: 7px;
+  left: 1px;
+}
+.small_block .small_block_container .food_cta svg path {
+  fill: #fff;
+}
+.small_block.recipe {
+  background-color: #636fe6;
+}
+.small_block.recipe .recipe_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  padding: 0 10px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+.small_block.recipe .recipe_container h2 {
+  font-family: 'logieDistrict';
+  color: #fff;
+  font-size: 28px;
+  font-weight: 400;
+}
+.small_block.recipe .recipe_container .check_container {
+  margin: 10px auto 25px auto;
+}
+.small_block.recipe .food_cta {
+  background-color: #65d8b9;
+  padding: 9px 23px;
+  font-size: 14px;
+}
+.food_input {
+  width: 70%;
+  margin: 10px auto;
+  border: 0;
+  font-size: 14px;
+  background: none;
+  background-color: #fff;
+  padding: 6px 10px;
+  border-radius: 1.3em;
+  color: #414354;
+}
+.food_input::-webkit-input-placeholder {
+  color: #9b9db1;
+  font-size: 12px;
+  text-align: center;
+  position: relative;
+  top: 4px;
+}
+.food_input:-moz-placeholder {
+  color: #9b9db1;
+  font-size: 12px;
+  text-align: center;
+  position: relative;
+  top: 4px;
+}
+.food_input::-moz-placeholder {
+  color: #9b9db1;
+  font-size: 12px;
+  text-align: center;
+  position: relative;
+  top: 4px;
+}
+.food_input:-ms-input-placeholder {
+  color: #9b9db1;
+  font-size: 12px;
+  text-align: center;
+  position: relative;
+  top: 4px;
+}
+.food_input:focus {
+  outline: none;
+}
+.last_blocks_container {
+  width: 100%;
+  height: 420px;
+}
+.last_blocks_container:before,
+.last_blocks_container:after {
+  content: "";
+  display: table;
+}
+.last_blocks_container:after {
+  clear: both;
+}
+.last_blocks_container .last_half {
+  height: 100%;
+  float: left;
+}
+.last_blocks_container .last_half:before,
+.last_blocks_container .last_half:after {
+  content: "";
+  display: table;
+}
+.last_blocks_container .last_half:after {
+  clear: both;
+}
+.last_blocks_container .last_half:first-child {
+  width: 70%;
+}
+.last_blocks_container .last_half:last-child {
+  width: 30%;
+}
+.last_medium_block {
+  width: 100%;
+  height: 100%;
+
+}
+.last_medium_block .lmb_content {
+  position: absolute;
+  top: 20px;
+  left: 35px;
+}
+.last_medium_block .lmb_content h2 {
+  font-size: 40px;
+  color: #5d5f81;
+  margin-bottom: 7px;
+}
+.last_medium_block .lmb_content h4 {
+  font-size: 30px;
+  color: #5d5f81;
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.5;
+  font-family: 'logieDistrict' !important;
+}
+.last_medium_block .lmb_content .food_cta {
+  background-color: #d95d4f;
+  font-size: 14px;
+  padding: 9px 24px;
+  margin-top: 17px;
+}
+.small_social {
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+.small_social .sms_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.small_social .sms_content .sms_ill {
+  text-align: center;
+}
+.small_social .sms_content .sms_ill svg {
+  width: 35px;
+  height: 50px;
+}
+.small_social .sms_content .sms_ill svg path {
+  fill: #fff;
+}
+.small_social .sms_content .food_cta {
+  margin-top: 8px;
+}
+.small_social.fb {
+  background-color: #3e5a9a;
+}
+.small_social.fb .food_cta {
+  background-color: #5b79b8;
+}
+.small_social.twitter {
+  background-color: #00b1ed;
+}
+.small_social.twitter .food_cta {
+  background-color: #72c8e6;
+}
+.footer {
+  color: #b0b3c4;
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 50px;
+  -webkit-transition: letter-spacing 0.35s ease;
+  transition: letter-spacing 0.35s ease;
+}
+.footer:hover {
+  letter-spacing: 2px;
+}
+@media only screen and (max-width: 766px) {
+  .nav_overlay .overlay_menu {
+    height: 80%;
+    font-size: 30px;
+  }
+  .nav_overlay .overlay_menu ul li {
+    height: 18%;
+    height: calc(100% / 10);
+  }
+  .middle_block_container {
+    height: 500px;
+  }
+  .middle_block_container .b_half:first-child,
+  .middle_block_container .b_half:last-child {
+    width: 100%;
+    height: auto;
+  }
+  .middle_block_container .b_half .medium_block {
+    height: 320px;
+  }
+  .last_blocks_container {
+    height: 500px;
+
+  }
+  .last_blocks_container .last_half:first-child,
+  .last_blocks_container .last_half:last-child {
+    width: 100%;
+    height: auto;
+  }
+  .last_blocks_container .last_half .last_medium_block {
+    width: 100%;
+    height: 320px;
+  }
+  .last_blocks_container .last_half .small_social {
+    float: left;
+    width: 50%;
+    height: 220px;
+  }
+}
+@media only screen and (max-width: 495px) {
+  .big_block .block_content h2 {
+    font-size: 35px;
+  }
+  .big_block .block_content h4 {
+    font-size: 18px;
+  }
+  .medium_block {
+    width: 100%;
+    height: 320px;
+  }
+  .medium_block.peas .block_content h2 {
+    font-size: 34px;
+  }
+  .medium_block.peas .block_content h4 {
+    font-size: 23px;
+  }
+  .medium_block.medium_tall .block_content h2 {
+    font-size: 27px;
+  }
+  .medium_block.medium_tall .block_content h4 {
+    font-size: 19px;
+  }
+  .small_block {
+    width: 100%;
+  }
+  .last_blocks_container .last_half .last_medium_block .lmb_content h2 {
+    font-size: 30px;
+  }
+  .last_blocks_container .last_half .last_medium_block .lmb_content h4 {
+    font-size: 20px;
+  }
+  .last_blocks_container .last_half .small_social {
+    width: 100%;
+  }
+}
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+
+#hero_txt {
+    font-size: 24px;
+    padding: 15px 21px 15px 21px;
+    text-align: left;
+    margin-left: 5px;
+}
+
+
+@charset "UTF-8";
+.social__wrap {
+  margin: 0;
+  padding: 0;
+}
+.social__wrap:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.social__item {
+  list-style: none;
+  float: left;
+  width: 12.5%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.social__item a {
+  display: block;
+  text-decoration: none;
+  padding: 50%;
+  cursor: pointer;
+  transition: all .25s ease-in-out;
+  -webkit-font-smoothing: antialiased;
+}
+.social__item a:before {
+  text-indent: 0;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 6vw;
+  color: #fff;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.social__item a span {
+  display: none;
+}
+.social__link--facebook {
+  background: #3b5998;
+}
+.social__link--facebook:before {
+  content: "";
+}
+.social__link--facebook:hover {
+  background: #4c70ba;
+}
+.social__link--twitter {
+  background: #55acee;
+}
+.social__link--twitter:before {
+  content: "";
+}
+.social__link--twitter:hover {
+  background: #83c3f3;
+}
+.social__link--google-plus {
+  background: #dc4e41;
+}
+.social__link--google-plus:before {
+  content: "";
+}
+.social__link--google-plus:hover {
+  background: #e4766c;
+}
+.social__link--linkedin {
+  background: #0077b5;
+}
+.social__link--linkedin:before {
+  content: "";
+}
+.social__link--linkedin:hover {
+  background: #0099e8;
+}
+.social__link--instagram {
+  background: #3f729b;
+}
+.social__link--instagram:before {
+  content: "";
+}
+.social__link--instagram:hover {
+  background: #548cb9;
+}
+.social__link--youtube {
+  background: #cd201f;
+}
+.social__link--youtube:before {
+  content: "";
+}
+.social__link--youtube:hover {
+  background: #e23e3d;
+}
+.social__link--twitch {
+  background: #6441a5;
+}
+.social__link--twitch:before {
+  content: "";
+}
+.social__link--twitch:hover {
+  background: #7e5bbe;
+}
+.social__link--paypal {
+  background: #003087;
+}
+.social__link--paypal:before {
+  content: "";
+}
+.social__link--paypal:hover {
+  background: #0042ba;
+}
+
+body {
+  background: #222;
+}
+
+
+  </style>
+
+
+
+</head>
+<body>
+<nav class="nav_bar" role="navigation">
+  <div class="nav_logo"><span>Site Logo</span>
+    <svg style='margin-left: 20%;margin-top: -65px;' width="262.17779541015625" height="77.96354675292969"><defs id="SvgjsDefs1829"></defs><g id="main_text" rel="mainfill" name="main_text" xmlns:name="mainText_mainfill" fill="#ffffff" transform="translate(0.2639274597167969, -19.977691650390625)"><path d="M16.494 49.482124999999996 q2.724609375 -1.0546875 4.716796875 -1.0546875 t2.5488 1.1426 q1.142578125 -1.318359375 2.841796875 -1.40625 q0.498046875 -0.029296875 1.23046875 -0.029296875 t0.9082 0.19043 t0.32227 0.71777 t0.17578 0.58594 t0.029297 0.19043 t-0.14648 0.32227 t-0.33691 0.36621 t-0.21973 0.20508 q-6.474609375 9.287109375 -13.2421875 21.18164063 q6.97265625 -6.181640625 12.48046875 -8.876953125 q0.3515625 -0.17578125 0.673828125 -0.17578125 q0.46875 0 0.615234375 0.6005859375 t0.14648 1.7139 t-0.13184 1.377 t-1.3623 1.0547 t-3.1934 2.0508 t-4.1602 2.7832 q-5.2734375 3.662109375 -8.671875 7.705078125 q-4.39453125 5.302734375 -6.298828125 8.5546875 q-0.703125 1.259765625 -2.373046875 1.259765625 q-3.310546875 0 -3.310546875 -3.134765625 q0 -3.193359375 3.134765625 -6.533203125 q2.34375 -2.490234375 4.306640625 -4.072265625 t2.1387 -1.7871 q2.16796875 -3.251953125 5.888671875 -9.228515625 q-3.1640625 3.310546875 -6.137695313 5.2734375 t-4.4385 1.9629 q-4.482421875 0 -4.482421875 -3.837890625 q0 -3.046875 1.552734375 -6.15234375 t3.9844 -5.5518 t5.2588 -4.3945 t5.5518 -3.0029 z M22.09 51.738125 q-3.3984375 0.732421875 -6.38671875 2.416992188 t-4.9219 3.6035 t-3.3398 3.9404 q-2.63671875 3.779296875 -2.63671875 5.859375 q0 0.498046875 0.2490234375 0.498046875 t1.1133 -0.52734 t2.4463 -1.8018 t3.5156 -3.0322 q4.482421875 -4.130859375 9.9609375 -10.95703125 z M36.503421875 55.986125 q6.9140625 -7.8515625 11.77734375 -7.8515625 q1.201171875 0 1.977539063 0.7177734375 t0.77637 1.8604 t-1.626 3.8232 t-3.0029 4.5264 q-0.732421875 0.9375 -1.655273438 0.9375 t-1.4355 -0.67383 t-0.5127 -1.582 q0 -2.021484375 2.16796875 -4.5703125 l-0.058594 -0.058594 q-0.966796875 0.087890625 -4.790039063 3.80859375 t-6.5039 6.665 t-5.8154 7.1631 q-0.908203125 1.259765625 -1.538085938 1.259765625 t-1.6699 -0.39551 t-1.2598 -0.57129 t-0.21973 -0.58594 t0.23438 -0.95215 t0.86426 -1.5381 t1.9043 -3.2227 t3.9697 -6.7383 t3.2227 -5.4492 q1.11328125 -1.93359375 1.81640625 -2.8125 q1.318359375 -1.669921875 4.453125 -1.669921875 q0.703125 0 0.703125 0.87890625 q0 1.376953125 -2.548828125 5.185546875 z M68.0276875 50.039125 q0 1.93359375 -1.567382813 3.3984375 t-3.5596 1.4648 q-0.64453125 0 -0.849609375 -0.3076171875 t-0.20508 -0.80566 t0.11719 -0.9668 q-1.0546875 0.3515625 -2.34375 1.083984375 t-3.1641 2.168 t-1.875 2.1387 q0 0.234375 0.6884765625 0.234375 t2.124 -0.4834 t2.0068 -0.4834 t0.74707 0.058594 q0.380859375 0.205078125 0.8203125 0.8935546875 t0.43945 1.084 t-0.76172 1.04 t-1.7285 0.98145 t-1.2891 0.5127 q-6.181640625 3.45703125 -6.181640625 4.74609375 q0 2.28515625 3.896484375 2.28515625 q2.490234375 0 5.009765625 -1.58203125 q2.138671875 -1.34765625 3.852539063 -2.739257813 t2.168 -1.7139 t0.68848 -0.32227 q0.76171875 0 0.76171875 1.69921875 t-0.20508 2.2412 t-1.1719 1.333 q-6.26953125 5.09765625 -11.86523438 5.09765625 q-2.98828125 0 -4.775390625 -0.8203125 q-3.28125 -1.494140625 -3.28125 -4.5703125 q0 -4.04296875 5.595703125 -6.123046875 q-1.11328125 -0.498046875 -1.435546875 -1.274414063 t-0.32227 -2.4902 t1.5967 -3.6328 t3.9111 -3.1494 q5.15625 -2.783203125 9.19921875 -2.783203125 q0.966796875 0 1.962890625 0.46875 t0.99609 1.3184 z M87.07065625 50.039125 q0 1.93359375 -1.567382813 3.3984375 t-3.5596 1.4648 q-0.64453125 0 -0.849609375 -0.3076171875 t-0.20508 -0.80566 t0.11719 -0.9668 q-1.0546875 0.3515625 -2.34375 1.083984375 t-3.1641 2.168 t-1.875 2.1387 q0 0.234375 0.6884765625 0.234375 t2.124 -0.4834 t2.0068 -0.4834 t0.74707 0.058594 q0.380859375 0.205078125 0.8203125 0.8935546875 t0.43945 1.084 t-0.76172 1.04 t-1.7285 0.98145 t-1.2891 0.5127 q-6.181640625 3.45703125 -6.181640625 4.74609375 q0 2.28515625 3.896484375 2.28515625 q2.490234375 0 5.009765625 -1.58203125 q2.138671875 -1.34765625 3.852539063 -2.739257813 t2.168 -1.7139 t0.68848 -0.32227 q0.76171875 0 0.76171875 1.69921875 t-0.20508 2.2412 t-1.1719 1.333 q-6.26953125 5.09765625 -11.86523438 5.09765625 q-2.98828125 0 -4.775390625 -0.8203125 q-3.28125 -1.494140625 -3.28125 -4.5703125 q0 -4.04296875 5.595703125 -6.123046875 q-1.11328125 -0.498046875 -1.435546875 -1.274414063 t-0.32227 -2.4902 t1.5967 -3.6328 t3.9111 -3.1494 q5.15625 -2.783203125 9.19921875 -2.783203125 q0.966796875 0 1.962890625 0.46875 t0.99609 1.3184 z M101.24962500000001 67.441425 q0 1.2890625 1.7578125 1.2890625 q0.9375 0 2.358398438 -0.9375 t2.5635 -2.0508 q3.046875 -3.017578125 3.45703125 -3.017578125 q0.76171875 0 0.76171875 2.197265625 t-1.377 3.0176 q-4.189453125 3.779296875 -6.474609375 4.599609375 q-1.2890625 0.439453125 -2.841796875 0.41015625 t-3.0762 -1.3477 t-1.5234 -3.208 t0.99609 -4.292 t2.0361 -4.1162 t2.5635 -3.9844 t1.6113 -2.8271 l-0.058594 -0.058594 q-0.966796875 0.087890625 -4.790039063 3.80859375 t-6.3135 6.4746 t-5.9473 7.3535 q-0.966796875 1.259765625 -1.58203125 1.259765625 t-1.6553 -0.39551 t-1.2744 -0.57129 t-0.23438 -0.52734 t0.20508 -0.86426 t0.39551 -0.84961 t0.62988 -1.04 t1.7432 -2.9736 t3.999 -6.7822 t3.2227 -5.4492 q1.11328125 -1.93359375 1.81640625 -2.8125 q1.318359375 -1.669921875 4.453125 -1.669921875 q0.703125 0 0.703125 0.87890625 q0 1.376953125 -2.548828125 5.185546875 l-1.2305 1.8457 q5.068359375 -5.625 8.5546875 -7.119140625 q1.69921875 -0.732421875 3.061523438 -0.732421875 t2.168 0.73242 t0.80566 1.626 t-0.61523 2.1387 t-1.2451 2.2266 t-1.6553 2.4756 t-1.1133 1.626 t-0.4541 0.70313 t-0.54199 0.83496 t-0.58594 0.92285 t-0.65918 1.0986 t-0.61523 1.084 t-0.58594 1.1133 t-0.4541 1.0254 q-0.41015625 1.025390625 -0.41015625 1.69921875 z  M126.445296875 59.560125 q0 -5.068359375 6.26953125 -8.3203125 q-2.373046875 -1.34765625 -2.373046875 -3.779296875 t2.1973 -4.5703 q4.3359375 -4.248046875 12.1875 -5.56640625 q3.515625 -6.884765625 3.662109375 -7.119140625 q0.498046875 -0.908203125 2.080078125 -1.450195313 t2.0801 -0.54199 q0.966796875 0 0.966796875 0.791015625 q0 0.205078125 -0.498046875 1.083984375 q-1.875 3.544921875 -3.69140625 7.060546875 q1.611328125 0.087890625 2.51953125 0.76171875 t0.9082 1.7871 t-0.76172 2.1533 t-1.9043 1.626 q-2.2265625 1.171875 -4.365234375 1.171875 l-0.29297 0 l-1.1426 2.2852 l0.32227 -0.029297 q1.171875 0 1.684570313 1.083984375 t0.5127 1.4355 t-0.20508 0.60059 t-0.58594 0.5127 t-0.54199 0.41016 t-0.4834 0.32227 t-0.60059 0.27832 t-0.64453 0.19043 t-0.57129 0.11719 q-0.8203125 0.17578125 -0.966796875 0.17578125 l-0.55664 0.17578 q-0.46875 0.9375 -1.040039063 2.05078125 t-1.2891 2.5928 t-1.1572 2.3291 q3.076171875 -1.11328125 6.225585938 -2.973632813 t3.7061 -2.7832 t0.9668 -0.92285 q0.615234375 0 1.127929688 0.8642578125 t0.5127 1.626 q0 1.875 -2.182617188 4.04296875 t-5.7422 3.8086 t-7.1924 2.0215 q-2.87109375 6.4453125 -3.208007813 7.001953125 t-1.1719 0.64453 t-1.1865 0.087891 t-0.80566 -0.21973 t-0.49805 -0.41016 t-0.16113 -0.4834 t-0.11719 -0.71777 t2.7246 -6.0205 q-2.16796875 -0.46875 -3.442382813 -1.845703125 t-1.2744 -3.3398 z M141.943296875 42.861125 q-2.490234375 1.0546875 -4.62890625 2.534179688 t-2.1387 2.0068 t1.084 0.52734 q0.087890625 0 0.46875 -0.0439453125 t1.1865 -0.11719 t1.626 -0.16113 q0.498046875 -0.9375 1.318359375 -2.592773438 t1.084 -2.1533 z M136.259296875 54.199124999999995 q-4.130859375 2.05078125 -4.130859375 4.482421875 q0 1.318359375 1.171875 1.46484375 q0.52734375 -0.99609375 1.508789063 -3.017578125 t1.4502 -2.9297 z  M176.04478125 49.482124999999996 q2.724609375 -1.0546875 4.716796875 -1.0546875 t2.5488 1.1426 q1.142578125 -1.318359375 2.841796875 -1.40625 q0.498046875 -0.029296875 1.23046875 -0.029296875 t0.9082 0.19043 t0.32227 0.71777 t0.17578 0.58594 t0.029297 0.19043 t-0.14648 0.32227 t-0.33691 0.36621 t-0.21973 0.20508 q-6.474609375 9.287109375 -13.2421875 21.18164063 q6.97265625 -6.181640625 12.48046875 -8.876953125 q0.3515625 -0.17578125 0.673828125 -0.17578125 q0.46875 0 0.615234375 0.6005859375 t0.14648 1.7139 t-0.13184 1.377 t-1.3623 1.0547 t-3.1934 2.0508 t-4.1602 2.7832 q-5.2734375 3.662109375 -8.671875 7.705078125 q-4.39453125 5.302734375 -6.298828125 8.5546875 q-0.703125 1.259765625 -2.373046875 1.259765625 q-3.310546875 0 -3.310546875 -3.134765625 q0 -3.193359375 3.134765625 -6.533203125 q2.34375 -2.490234375 4.306640625 -4.072265625 t2.1387 -1.7871 q2.16796875 -3.251953125 5.888671875 -9.228515625 q-3.1640625 3.310546875 -6.137695313 5.2734375 t-4.4385 1.9629 q-4.482421875 0 -4.482421875 -3.837890625 q0 -3.046875 1.552734375 -6.15234375 t3.9844 -5.5518 t5.2588 -4.3945 t5.5518 -3.0029 z M181.64078125 51.738125 q-3.3984375 0.732421875 -6.38671875 2.416992188 t-4.9219 3.6035 t-3.3398 3.9404 q-2.63671875 3.779296875 -2.63671875 5.859375 q0 0.498046875 0.2490234375 0.498046875 t1.1133 -0.52734 t2.4463 -1.8018 t3.5156 -3.0322 q4.482421875 -4.130859375 9.9609375 -10.95703125 z M208.169203125 50.420125 q0.9228515625 0.791015625 0.9228515625 2.416992188 t-1.1426 4.2188 t-3.1348 5.2734 t-4.3799 5.0391 t-5.1563 3.8672 t-5.0244 1.5088 t-3.6182 -1.4209 t-1.3623 -3.9551 t1.2451 -5.6104 t3.208 -5.4346 t4.248 -4.2334 q4.775390625 -3.837890625 8.37890625 -3.837890625 q1.611328125 0 2.431640625 0.791015625 q0.29296875 0.263671875 0.29296875 0.46875 l0 0.17578 q0.41015625 -0.05859375 1.2890625 -0.05859375 t1.8018 0.79102 z M203.408203125 53.525125 l-0.20508 0 q-1.025390625 0 -1.025390625 -1.494140625 q-2.138671875 0.703125 -4.482421875 2.4609375 t-4.1895 4.1602 q-3.75 4.8046875 -3.80859375 8.115234375 q0 1.640625 1.201171875 1.640625 t3.5742 -1.582 t4.7021 -4.5117 t3.4863 -5.083 t1.1572 -2.9297 t-0.41016 -0.77637 z M235.209859375 28.813125 q1.069335938 0.8349609375 1.069335938 2.475585938 t-1.8164 5.1416 t-4.3652 7.1484 t-5.7715 7.749 q-5.09765625 6.50390625 -9.78515625 11.68945313 q-0.029296875 0.3515625 -0.2490234375 1.303710938 t-0.21973 1.9189 t0.89355 1.7432 t2.2119 0.77637 t2.8271 -0.9375 t2.6221 -2.0801 q2.9296875 -3.017578125 3.6328125 -3.017578125 t0.70313 2.1387 l0 0.58594 q0 1.142578125 -0.41015625 1.669921875 q-2.4609375 3.017578125 -5.537109375 4.497070313 t-5.8301 1.4795 t-4.1895 -1.6846 t-1.4355 -4.6143 q0 -5.712890625 3.061523438 -13.43261719 t6.8994 -13.14 q8.642578125 -12.24609375 13.21289063 -12.24609375 q1.40625 0 2.475585938 0.8349609375 z M231.415859375 32.842125 q0 -0.439453125 -0.29296875 -0.439453125 q-1.025390625 0 -5.390625 5.859375 t-6.3135 9.3457 t-3.6768 8.7598 q3.45703125 -4.1015625 9.565429688 -12.78808594 t6.1084 -10.737 z M261.591609375 28.389125 q0.322265625 0.3515625 0.322265625 0.7177734375 t-0.57129 1.3477 t-2.6221 4.2773 t-3.1934 5.1709 q-6.650390625 10.81054688 -10.4296875 18.28125 t-3.7793 9.0234 l0 0.23438 q0 1.201171875 0.87890625 1.201171875 t2.124 -0.82031 t2.1826 -1.7578 t1.8896 -1.9482 t1.1572 -1.1865 t0.52734 -0.17578 q0.498046875 0 0.64453125 0.6298828125 t0.14648 1.7578 t-0.17578 1.4795 q-0.849609375 1.640625 -3.735351563 3.999023438 t-5.4639 2.3584 q-4.39453125 0 -4.39453125 -3.720703125 q0 -2.314453125 1.7578125 -6.064453125 q-2.373046875 3.076171875 -4.833984375 5.244140625 q-4.5703125 3.984375 -7.939453125 3.984375 q-1.875 0 -2.768554688 -1.318359375 t-0.89355 -3.7939 t1.9336 -5.9326 t4.8193 -6.2256 t6.4014 -4.6289 t6.4746 -1.8604 q0.9375 0 2.197265625 1.142578125 q0.849609375 -1.34765625 3.134765625 -5.390625 q7.177734375 -12.09960938 9.4921875 -14.765625 q1.23046875 -1.611328125 3.837890625 -1.611328125 q0.556640625 0 0.87890625 0.3515625 z M242.460609375 52.558125000000004 q-4.21875 0.9375 -7.8515625 3.92578125 t-5.4492 6.2549 t-1.8164 4.2334 t0.41016 0.9668 q1.7578125 0 8.701171875 -7.8515625 q3.45703125 -3.8671875 6.005859375 -7.529296875 z"></path></g></svg>
+  </div>
+  <div class="nav_toggle"><span class="hamb_toggle"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></span><span class="toggle_name">MENU</span></div>
+</nav>
+<div class="blocks_container" role="main">
+  <div class="nav_overlay">
+    <div class="fix_top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="349.629" height="349.629" viewbox="0 0 349.629 349.629">
+        <path d="M174.827 73.433L0 253.42l23.434 22.77 151.393-155.872 151.39 155.878 23.412-22.776"></path>
+      </svg>
+    </div>
+    <nav class="overlay_menu">
+      <ul style="">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="big_block" style="background-image: url('https://images.unsplash.com/photo-1507090960745-b32f65d3113a?dpr=1&auto=compress,format&fit=crop&w=750&h=&q=80&cs=tinysrgb&crop=')">
+    <div class="block_content">
+      <h2 id='hero_txt'>Shop unique gifts &amp; wearable happiness that look and feel good. Enjoy discounted shipping with and order of $50 or more!</h2>
+      <h4>Shop Our Unique T-shirts</h4>
+      <button class="food_cta">Shop Now</button>
+    </div>
+  </div>
+  <div class="middle_block_container">
+    <div class="b_half">
+      <div class="medium_block medium_tall" style="background-image: url('https://images.unsplash.com/photo-1502232067273-9baec0dfaf23?dpr=1&auto=compress,format&fit=crop&w=376&h=&q=80&cs=tinysrgb&crop=')">
+        <div class="block_content">
+          <!--<h2>Pumpkin <br/> Season</h2>
+          <h4>The recipes of autumn</h4>-->
+          <button class="food_cta">> Women's Apparel</button>
+        </div>
+      </div>
+    </div>
+    <div class="b_half">
+      <div class="medium_block peas" style="background-image: url('https://image.freepik.com/free-vector/happy-boy-background-celebrating-1k-followers_23-2147653259.jpg')">
+        <div class="block_content">
+        <!--  <h2>SPECIAL </h2>
+          <h4>Buy<br/> Get One</br> One Free</h4> -->
+          <button class="food_cta">Read More</button> 
+        </div>
+      </div>
+      <div class="small_block recipe">
+        <div class="recipe_container">
+          <h2>Join Our Eclub</h2>
+          <input class="food_input" type="text" placeholder="Enter Your Email"/>
+          <div class="check_container">
+            <input class="check_box" id="evidence" type="checkbox" checked="checked"/>
+            <label for="evidence"><span>Stay Up On Latest New &amp; Promotions </span></label>
+          </div>
+          <button class="food_cta">Join Now</button>
+        </div>
+      </div>
+      <div class="small_block" style="background-image: url('')">
+        <div class="small_block_container">
+          <h2>Place Holder</h2>
+          <button class="food_cta">
+            <svg xmlns="http://www.w3.org/2000/svg" width="401.948" height="401.949" viewbox="0 0 401.948 401.949">
+              <path d="M397 190.734L228.738 73.444c-6.6-5.632-11.996-3.147-11.996 5.528v49.068c0 8.672-7.1 15.77-15.77 15.77l-104.176.156H15.69v.125C7.05 144.14.002 151.215 0 159.858l.002 82.79c0 8.672 7.095 15.77 15.765 15.77l183.426-.275h1.834c8.647.028 15.717 7.107 15.717 15.765v49.067c0 8.675 5.397 11.163 11.993 5.535l168.265-117.295c6.596-5.636 6.596-14.848-.002-20.48z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="last_blocks_container" >
+    <div class="last_half">
+      <div class="last_medium_block" style="background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/43353e47810259.58872c8d380f5.png')">
+        <div class="lmb_content">
+
+      <!--    <h2>Placeholder</h2>
+          <h4>lorem ipsum <br/> revolution</h4> -->
+         <h4> </h4>
+         <h6 style="padding-bottom: 44%;"> </h6>
+          <button class="food_cta">Read More</button>
+        </div>
+      </div>
+    </div>
+    <div class="last_half">
+      <div class="small_social twitter">
+        <div class="sms_content">
+          <div class="sms_ill">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 612 612">
+              <path d="M612 116.258c-22.525 9.98-46.694 16.75-72.088 19.772 25.93-15.527 45.777-40.155 55.184-69.41-24.322 14.378-51.17 24.82-79.775 30.48-22.906-24.438-55.49-39.66-91.63-39.66-69.333 0-125.55 56.218-125.55 125.514 0 9.828 1.11 19.427 3.25 28.606-104.325-5.24-196.834-55.223-258.75-131.174-10.822 18.51-16.98 40.078-16.98 63.1 0 43.56 22.182 81.994 55.836 104.48-20.575-.688-39.926-6.348-56.867-15.756v1.568c0 60.806 43.29 111.554 100.692 123.104-10.517 2.83-21.607 4.398-33.08 4.398-8.107 0-15.947-.803-23.634-2.333 15.985 49.907 62.336 86.2 117.253 87.194-42.946 33.655-97.098 53.656-155.915 53.656-10.134 0-20.116-.612-29.944-1.72 55.568 35.68 121.537 56.484 192.44 56.484 230.947 0 357.187-191.29 357.187-357.188l-.42-16.253C573.87 163.525 595.21 141.42 612 116.257z" fill="#010002"></path>
+            </svg>
+          </div><a class="food_cta" href="https://twitter.com/RiccardoZanutta" target="_blank">Follow</a>
+        </div>
+      </div>
+      <div class="small_social fb">
+        <div class="sms_content">
+          <div class="sms_ill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="430.113" height="430.114" viewbox="0 0 430.113 430.114">
+              <path d="M158.08 83.3v59.218h-43.384v72.412h43.385v215.183h89.123V214.936h59.805s5.6-34.72 8.316-72.685H247.54V92.74c0-7.4 9.717-17.354 19.32-17.354h48.558V0h-66.02c-93.52-.004-91.317 72.48-91.317 83.3z"></path>
+            </svg>
+          </div>
+          <button class="food_cta">Like</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer" role="contentinfo">
+  <span style="padding-bottom: 300px;">
+&copy; 2017 Green Gold </span>
+<!-- /Add Font Awesome class name for more icons -->
+<ul class='social__wrap' style="position: fixed;bottom: 0;left: 0;width: 99.9vw;margin-left: 24.7vw;">
+  <li class='social__item'>
+    <a class='social__link--facebook' href=''>
+      <span>facebook</span>
+    </a>
+  </li>
+  <li class='social__item'>
+    <a class='social__link--twitter' href=''>
+      <span>twitter</span>
+    </a>
+  </li>
+
+
+  <li class='social__item'>
+    <a class='social__link--instagram' href=''>
+      <span>instagram</span>
+    </a>
+  </li>
+  <li class='social__item'>
+    <a class='social__link--youtube' href=''>
+      <span>youtube</span>
+    </a>
+  </li>
+ 
+</ul>
+
+</footer>
+    
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script>
+
+
+var $navOverlay  = $('.nav_overlay'),
+    $overlayMenu = $('.overlay_menu'),
+    $toggle      = $('.hamb_toggle'),
+    $toggleName  = $toggle.find('.toggle_name');
+
+$(document).on('click', '.nav_toggle', function() {
+
+  $navOverlay.toggleClass('is-open');
+  $toggle.toggleClass('is-open');
+  $toggleName.toggleClass('is-open');
+  
+  // Let's scroll onClick
+  var offset = $overlayMenu.find('li:first').offset().top;
+  if($navOverlay.hasClass('is-open')) {
+    setTimeout(function() {
+      $('html, body').animate({
+        scrollTop: offset - 100
+      }, 500);
+    }, 380);
+  }
+});
+
+$(document).on('click', '.fix_top', function(event) {
+  event.preventDefault();
+  $('html, body').animate({
+    scrollTop: 0
+  }, 500);
+  setTimeout(function() {
+    $navOverlay.removeClass('is-open');
+    $toggle.removeClass('is-open');
+    $toggleName.removeClass('is-open');
+  }, 550);
+});</script>
+</body>
+</html>
