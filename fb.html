@@ -376,12 +376,12 @@ input[type="search"] {
 // DemoJS
 // ======================================================
 
-$('.menu-trigger').on('click', function() {
+$('.menu-trigger').on('dblclick', function() {
   $('.panel').toggleClass('is-moved');
 });
 
 // http://stackoverflow.com/questions/18409551/prevent-nested-elements-from-triggering-an-event-for-parent-element
-$('.panel--reset').on('click', function(e) {
+$('.panel--reset').on('dblclick', function(e) {
   if(e.target == e.currentTarget) {
     $('.panel').toggleClass('is-moved');
   }
