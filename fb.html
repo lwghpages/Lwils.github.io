@@ -290,9 +290,9 @@ input[type="search"] {
     </div>
 
     <div class="status-nav panel--reset" style="padding-left: 0.025em;text-align: center;">
-      <span><a href="#status">Women's Apparel</a></span>
-      <span><a href="#photo">Men's Apparel</a></span>
-      <span><a href="#check-in">Accesories</a></span>
+      <span><a href="#status">Let's Get Social</a></span>
+      <span><a href="#photo"><img style="padding: 5px 7px 5px 7px;width: 2.3em;" src="https://cdn0.iconfinder.com/data/icons/social-networks-and-media-flat-icons/133/Social_Media_Socialmedia_network_share_socialnetwork_network-09-128.png" alt="fb icon" id="fblogo">Facebook</a></span>&nbsp;
+      <span><a href="#check-in"><img style="padding: 5px 7px 5px 7px;width: 2.3em;" src="https://cdn0.iconfinder.com/data/icons/social-networks-and-media-flat-icons/136/Social_Media_Socialmedia_network_share_socialnetwork_network-28-128.png" alt="Instagramlogo" id="instagramlogo">Instagram</a></span>
     </div>
   </div>
   <div id="heroheader">
@@ -376,12 +376,12 @@ input[type="search"] {
 // DemoJS
 // ======================================================
 
-$('.menu-trigger').on('dblclick', function() {
+$('.menu-trigger').on('click', function() {
   $('.panel').toggleClass('is-moved');
 });
 
 // http://stackoverflow.com/questions/18409551/prevent-nested-elements-from-triggering-an-event-for-parent-element
-$('.panel--reset').on('dblclick', function(e) {
+$('.panel--reset').on('click', function(e) {
   if(e.target == e.currentTarget) {
     $('.panel').toggleClass('is-moved');
   }
