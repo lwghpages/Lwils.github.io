@@ -1,0 +1,421 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+   <!-- Bootstrap and Font Awesome css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+<title>Maria Penny</title>
+
+<style>
+@font-face {
+    font-family: "logieFont";
+    src: url(Gilroy-ExtraBold.otf);
+}
+
+@font-face {
+    font-family: 'logieDistrict';
+    src: url(DistTh__.otf);
+  }
+
+
+@charset "UTF-8";
+.ggv {
+  -moz-box-sizing: initial;
+  -webkit-box-sizing: initial;
+  box-sizing: initial;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font: normal 100%/1.5 "Alegreya Sans", sans-serif;
+}
+
+html,
+body {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #30436e;
+}
+a:hover {
+  text-decoration: underline;
+  color: #96a8d2;
+}
+
+header[role="banner"] {
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 230px;
+  background: #32394b;
+}
+
+.utility-nav {
+  position: relative;
+}
+
+.utility-nav__items {
+  padding: 18px 0;
+  background: #d3d3d3;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-align: center;
+}
+.utility-nav__items span a {
+  color: white;
+}
+.utility-nav__items span:after {
+  content: "•";
+  margin: 0 5px;
+}
+.utility-nav__items span:last-child:after {
+  content: "";
+}
+
+form {
+  width: 92%;
+  margin: 10px auto;
+}
+
+input[type="search"] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 8px;
+  background: #484a5b;
+}
+
+.menu__items {
+  list-style-type: none;
+  padding: 0 10px;
+  width: 100%;
+}
+.menu__items:before {
+  border-bottom: 1px solid #414656;
+  content: "Green | Gold ™"; 
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 12px;
+  font-size: 0.675rem;
+  color: #747687;
+}
+.menu__items li {
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.menu__items li:last-child {
+  box-shadow: none;
+}
+.menu__items a {
+  display: inline-block;
+  padding: 10px 0;
+  color: white;
+}
+
+.menu-trigger {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  z-index: 9999;
+  text-indent: -9999em;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/392/menu-alt-512.png) top left no-repeat;
+  background-size: cover;
+  color: #fff !important;
+}
+.menu-trigger:hover {
+  cursor: pointer;
+}
+
+.status-nav {
+  padding: 14px 0;
+  width: 100%;
+  background: #e9e9e9;
+  text-align: center;
+}
+.status-nav span:after {
+  content: "•";
+  margin: 0 5px;
+}
+.status-nav span:last-child:after {
+  content: "";
+}
+
+.panel {
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -moz-transition: -moz-transform 0.275s ease-in-out;
+  -o-transition: -o-transform 0.275s ease-in-out;
+  -webkit-transition: -webkit-transform 0.275s ease-in-out;
+  transition: transform 0.275s ease-in-out;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #ccc;
+}
+.panel.is-moved {
+  -moz-transform: translateX(230px);
+  -ms-transform: translateX(230px);
+  -webkit-transform: translateX(230px);
+  transform: translateX(230px);
+}
+
+.l-users {
+  width: 100%;
+  padding: 0 10px;
+  position: relative;
+  margin: 10px auto;
+}
+
+.fake-person-wrap {
+  margin: 60px 0;
+  padding: 10px;
+  position: relative;
+  background: white;
+}
+.fake-person-wrap:first-child {
+  margin-top: 10px;
+}
+
+.random-user__name {
+  margin: 0;
+  position: absolute;
+  top: 10px;
+  left: 70px;
+  font-size: 11px;
+  font-size: 0.675rem;
+}
+
+.share {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  flew-direction: row;
+  background: #eff2f5;
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+}
+.share li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 33.333333%;
+  border-right: 2px solid #dbdee1;
+  text-align: center;
+}
+.share li:last-child {
+  border-right: none;
+}
+
+ #herobaby { 
+          width: 100%;height:68vh;background-attachment: relative;background-position: center;-webkit-background-size: cover;background-repeat: no-repeat;
+          background-size: cover;background-repeat: no-repeat;
+  }
+  #heroheader{width: 100%;height: 20px;background-color: #444;position: relative;display: block;}
+
+ @media (max-width: 500px){
+
+  #heropk {width: 100%;height: 27vh !important;}
+  #herobaby {height: 27.25vh !important;}
+
+  }
+</style>
+    <body>
+<!-- #Header -->
+<header class="panel--reset" role="banner">
+  <form role="form">
+    <input type="search" placeholder="Search">
+  </form>
+
+  <nav role="navigation">
+    <ul class="menu__items" style="letter-spacing: 0.068em; font-family: 'logieDistrict';">
+      <li><a href="#">New Designs</a></li>
+      <li><a href="#">Cart</a></li>
+      <li><a href="#">Buy Giftcards</a></li>
+      <li><a href="#">Clearance</a></li>
+      <li><a href="#">Sign In / Sign Up</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- #Panel -->
+<div class="panel panel--reset" role="main">
+
+  <b class="menu-trigger">menu</b>
+
+  <div class="utility-nav">
+
+    <div class="utility-nav__items panel--reset">
+     <!-- <span><a href="#friend-requests">Friend Requests</a></span>
+      <span><a href="#messages">Messages</a></span>
+      <span><a href="#notifications">Notifications</a></span> -->
+      <br>
+    </div>
+
+    <div class="status-nav panel--reset" style="padding-left: 0.025em;text-align: center;">
+      <span><a href="#status">Let's Get Social</a></span>
+      <span><a href="#photo"><img style="padding: 5px 7px 5px 7px;width: 2.3em;" src="https://cdn0.iconfinder.com/data/icons/social-networks-and-media-flat-icons/133/Social_Media_Socialmedia_network_share_socialnetwork_network-09-128.png" alt="fb icon" id="fblogo">Facebook</a></span>&nbsp;
+      <span><a href="#check-in"><img style="padding: 5px 7px 5px 7px;width: 2.3em;" src="https://cdn0.iconfinder.com/data/icons/social-networks-and-media-flat-icons/136/Social_Media_Socialmedia_network_share_socialnetwork_network-28-128.png" alt="Instagramlogo" id="instagramlogo">Instagram</a></span>
+    </div>
+  </div>
+  <div id="heroheader">
+    <p id="heroheader_text" style="width: 100%;margin: 5px 7px 5px 7px;color: #fff;font-size: 0.6rem;letter-spacing: 0.032em;">Shop&nbsp;Green|Gold&nbsp;t-shirts&nbsp;ft&nbsp;designs&nbsp;created&nbsp;by&nbsp;independent&nbsp;artists!</p>
+  </div>
+<div id="herobaby">
+  <img id='heropk' style="width: 100%;height: 100%;" src="https://cdn-media.threadless.com/homely/feature_43.jpg?w=1880&h=525" alt="hero" class="img-responsive">
+</div>
+
+  <div class="fb-users l-users" >
+    <div class="fake-person-wrap panel--reset" >
+      <img style="width: 32%;" class="img-responsive" src="https://images.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.tf24He-B0TdouKbwXuHuVwDsEs%26pid%3D15.1&f=1" style="text-align: center;background: #333 !important;"  height="auto" alt="">
+      <p class="random-user__name"><span class="fname"></span> <span class="lname"></span></p>
+      <p style="color: ">  Kanye's White T-shirt  $179.99 - <span style="font-size: 0.82em;color: #f90;">SM MD XL</span></p>
+
+      <ul class="share">
+        <li><a href="#like"><i class="fa fa-heart"></i></a></li>
+        <li><a href="#comment"><i class="fa fa-share"></i></a></li>
+        <li><a href="#share"><i class="fa fa-shopping-cart"></i></a></li>
+      </ul> 
+    </div>
+    
+    <div class="fake-person-wrap panel--reset">
+      <img src="" width="50" height="auto" alt="">
+      <p class="random-user__name"><span class="fname"></span> <span class="lname"></span></p>
+      <p>I am a place holder for information for this company called green gold</p>
+
+      <ul class="share">
+        <li><a href="#like">Like</a></li>
+        <li><a href="#comment">Comment</a></li>
+        <li><a href="#share">Share</a></li>
+      </ul>  
+    </div>
+      
+    <div class="fake-person-wrap panel--reset">
+      <img src="" width="50" height="auto" alt="">
+      <p class="random-user__name"><span class="fname"></span> <span class="lname"></span></p>
+      <p>I am a place holder for information for this company called green gold</p>
+      
+      <ul class="share">
+        <li><a href="#like">Like</a></li>
+        <li><a href="#comment">Comment</a></li>
+        <li><a href="#share">Share</a></li>
+      </ul> 
+    </div>
+    
+    <div class="fake-person-wrap panel--reset">
+      <img src="" width="50" height="auto" alt="">
+      <p class="random-user__name"><span class="fname"></span> <span class="lname"></span></p>
+      <p>I am a place holder for information for this company called green gold</p>
+      
+      <ul class="share">
+        <li><a href="#like">Like</a></li>
+        <li><a href="#comment">Comment</a></li>
+        <li><a href="#share">Share</a></li>
+      </ul>
+    </div>
+    
+    <div class="fake-person-wrap panel--reset">
+      <img src="" width="50" height="auto" alt="">
+      <p class="random-user__name"><span class="fname"></span> <span class="lname"></span></p>
+      <p>I am a place holder for information for this company called green gold</p>
+      
+      <ul class="share">
+        <li><a href="#like">Like</a></li>
+        <li><a href="#comment">Comment</a></li>
+        <li><a href="#share">Share</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script>// touche.js
+// http://benhowdle.im/touche
+// ======================================================
+
+/*!function(){"use strict";function a(b){if(!(this instanceof a))return new a(b);if(!b)throw new Error("No DOM elements passed into Touche");return this.nodes=b,this}var b="ontouchstart"in window||"msmaxtouchpoints"in window.navigator;if(a.prototype.on=function(a,c){var d,e,f=this.nodes,g=f.length;if(b&&"click"===a&&(d=!0),e=function(a,b,c){var e,f=function(){!e&&(e=!0)&&c.apply(this,arguments)};a.addEventListener(b,f,!1),d&&a.addEventListener("touchend",f,!1)},g)for(;g--;)e(f[g],a,c);else e(f,a,c);return this},window.Touche=a,window.jQuery&&b){var c=jQuery.fn.on;jQuery.fn.on=function(){var a=arguments[0];return arguments[0]="click"===a?"touchend":a,c.apply(this,arguments),this}}}();
+*/
+
+// DemoJS
+// ======================================================
+
+$('.menu-trigger').on('click', function() {
+  $('.panel').toggleClass('is-moved');
+});
+
+// http://stackoverflow.com/questions/18409551/prevent-nested-elements-from-triggering-an-event-for-parent-element
+$('.panel--reset').on('click', function(e) {
+  if(e.target == e.currentTarget) {
+    $('.panel').toggleClass('is-moved');
+  }
+});
+
+
+// Random User
+// http://randomuser.me
+// ======================================================
+
+$.ajax({
+  url: '',
+  dataType: 'json',
+  success: function(data) {
+    // uncomment console.log to view the user Object
+    console.log(data.results);
+
+    $('.fake-person-wrap > img').each(function(i) {
+      $(this).attr('src', data.results[i].picture.medium);
+    });
+    
+    $('.fb-users > .fake-person-wrap span.fname').each(function(i) {
+      $(this).append(data.results[i].name.first);
+    });
+
+    $('.fb-users > .fake-person-wrap span.lname').each(function(i) {
+      $(this).append(data.results[i].name.last);
+    });
+  }
+});</script>
+<script>$("a[href='#top']").click(function() {
+$("html, body").animate({ scrollTop: 0 }, "slow");
+return false;
+});
+</script>
+</body>
+</html>
