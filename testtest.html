@@ -1,0 +1,1185 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+   <!-- Bootstrap and Font Awesome css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GQ | LMT</title>
+
+<style>
+@font-face {
+    font-family: "logieFont";
+    src: url(Gilroy-ExtraBold.otf);
+}
+
+@font-face {
+    font-family: 'logieDistrict';
+    src: url(DistTh__.otf);
+  }
+
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-image: url(https://images.unsplash.com/photo-1470290449668-02dd93d9420a?auto=format&fit=crop&w=750&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+  background-position:  center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+html {
+  font-size: 16px;
+}
+
+a {
+  color: #000;
+}
+
+/* GQ | LMT NAVIGATION */
+
+/* Formats and Blog Nav */
+.brandNav {
+  background-color: #e6e6e6;
+}
+
+.brandNav__section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.brandNav__item {
+  height: 40px;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.brandNav__item:hover {
+  background-color: #f5f5f5;
+  color: #fff;
+  text-decoration: none;
+}
+
+.brandNav-active {
+  background-color: #fff;
+
+}
+
+.brandNavBlog {
+  background-color: #fff;
+  color: #000;
+}
+
+.brandNavBlog:hover {
+  background-color: #4e4a69;
+}
+
+/* Search, Logo, User, Main Nav */
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-default {
+  background-color: #fff;
+  padding: 20px 0 0 0;
+  border: none;
+}
+
+.navbar-collapse {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar-toggle {
+  z-index: 3;
+}
+
+
+
+.navbar-brand {
+  padding: 0px;
+  margin-left: 0!important;
+  height: auto!important;
+}
+
+.navbar-brand>img {
+  width: 150px;
+  height: auto;
+}
+
+.brand-centered {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.navbar-form {
+  padding: 0;
+}
+
+ul.nav.navbar-nav.navbar-centered {
+  background-color: #595478;
+  color: #fff;
+  width: 100%;
+  /* full purple */
+  margin: 20px 0 0 0;
+}
+
+@media (min-width: 768px) {
+  .navbar-centered {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+  }
+  ul.nav.navbar-nav.navbar-centered > li > a {
+    color: #fff
+  }
+}
+
+
+/* mega nav stuff */
+
+.dropdown-large {
+  position: static !important;
+}
+
+@media screen and (min-width: 768px) {
+  .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+  }
+}
+
+.dropdown-menu-large {
+  padding: 20px 0;
+}
+
+ul.nav.navbar-nav.navbar-centered > li:hover {
+  background-color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .175);
+}
+
+ul.nav.navbar-nav.navbar-centered > li:hover > a {
+  color: #595478;
+}
+
+.dropdown-menu-large > div > div > li > ul {
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu-large > div > div > li > ul > li {
+  list-style: none;
+}
+
+.dropdown-header {
+  padding: 3px 0;
+}
+
+.dropdown-menu-large > div > div > li > ul > li > a {
+  display: block;
+  padding: 3px 0;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333333;
+  white-space: normal;
+}
+
+.dropdown-menu-large > div > div > li ul > li > a:hover,
+.dropdown-menu-large > div > div > li ul > li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: #f5f5f5;
+}
+
+.dropdown-menu-large .dropdown-header {
+  color: #428bca;
+  font-size: 18px;
+}
+
+
+/* This is for tablet and mobile */
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    margin: 0;
+  }
+  .navbar-collapse {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .dropdown-menu-large {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .dropdown-menu-large {
+    padding: 20px 0;
+  }
+  .dropdown-menu-large > div > div > li {
+    margin-bottom: 30px;
+  }
+  .dropdown-menu-large > div > div > li:last-child {
+    margin-bottom: 0;
+  }
+  .dropdown-menu-large .dropdown-header {
+    padding: 3px 0!important;
+  }
+  .navbar-right {
+    white-space: nowrap;
+  }
+  .nav>li.nav-halfblock>a,
+  .nav>li.nav-fullblock>a {
+    text-align: center;
+  }
+  .navbar-right>li.nav-halfblock {
+    display: inline-block;
+    width: 50%;
+  }
+  .nav>li.nav-fullblock {
+    background-color: #595478;
+    margin-bottom: 15px;
+  }
+  .nav>li.nav-fullblock a {
+    color: #fff;
+  }
+  .nav>li.nav-fullblock a:hover {
+    color: #fff;
+  }
+  ul.nav.navbar-nav.navbar-centered {
+    background-color: transparent;
+  }
+}
+
+.navbar-collapse {
+  border-top: 0!important;
+}
+
+@media (min-width: 979px) {
+  ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+  }
+}
+
+section.content {
+  padding-top: 20px;
+}
+
+.dropdown-menu-large > .container {max-width: 960px;}
+
+.blktxt-toplogos {color: #000;font-size: 1.68rem !important;padding: 5px 7px 5px 7px;}
+
+/* #whisper brands lowlight  */
+
+.as-seen-on {
+  width: 100%;
+  background: #ccc;
+}
+
+.as-seen-on > div {
+  width: 100%;
+  max-width: 980px;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+
+.as-seen-on img {
+  max-width: 100%;
+  height: auto;
+  max-height: 60px;
+}
+
+@media screen and (min-width: 960px) {
+  .as-seen-on img {
+    width: 480px;
+    display: inline-block;
+  }
+  .as-seen-on h5 {
+    padding: 10px 0 0 10px;
+    text-align: left;
+  }
+}
+
+#mobileOnly {opacity: 0;}
+@media (max-width: 700px){
+	#mobileOnly {opacity: 0 !important;}
+
+}
+
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80em;
+
+}
+
+#container {
+    float: left;
+    padding: 1em;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+a {
+    color: #e5e5e5;
+}
+
+hr {
+    background-color: #e5e5e5;
+    border: 0;
+    height: 1px;
+    margin: 3em 0;
+    width: 100%;
+}
+
+
+
+/*** DEVICES ***/
+.device,
+.device:after,
+.device > * {
+    border: solid 1px #e5e5e5;
+}
+
+.device,
+.device > * {
+    border-radius: 3px;
+}
+
+.device {
+    display: table;
+    margin: 1em auto;
+    position: relative;
+}
+
+.device:before,
+.device:after {
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+.device:before {
+    background-color: #e5e5e5;
+}
+
+.device:not(.landscape):before,
+.device:not(.landscape):after {
+    left: 50%;
+}
+
+.device.landscape:before,
+.device.landscape:after {
+    top: 50%;
+}
+
+.device > * {
+    width: 100%;
+}
+
+
+
+/*** DESKTOP ***/
+.desktop {
+    background-image: 
+        radial-gradient(12px at 14px 15px, #e5e5e5 45%, transparent 50%),
+        radial-gradient(12px at 35px 15px, #e5e5e5 45%, transparent 50%),
+        radial-gradient(12px at 58px 15px, #e5e5e5 45%, transparent 50%);
+}
+
+.desktop:after {
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-width: 0 12px 25px 12px;
+    height: 0;
+    left: 0!important;
+    margin-left: 100px;
+    margin-right: 9px;
+    max-width: 250px;
+    top: 6px;
+    width: calc(100% - 100px - 9px);
+}
+
+.desktop > * {
+    margin: 3px;
+    margin-top: calc(3px * 10);
+    max-width: calc(100% - (3px * 2));
+}
+
+
+
+/*** TABLET (Image should have 4:3 ratio) ***/
+.tablet:before,
+.tablet:after {
+    border-radius: 50%;
+}
+
+/* Tablet - Portrait */
+.tablet:not(.landscape) {
+    border-radius: 6% / 4.5%;
+}
+
+.tablet:not(.landscape):before,
+.tablet:not(.landscape):after {
+    transform: translateX(-50%);
+}
+
+.tablet:not(.landscape):before {
+    padding-top: calc((100% - 87.5%) / 2 / 3.5);
+    top: calc((100% - 87.5%) / 2 / 1.75);
+    width: calc((100% - 87.5%) / 2 / 3.5);
+}
+
+.tablet:not(.landscape):after {
+    bottom: calc((100% - 87.5%) / 5.5);
+    padding-top: calc((100% - 87.5%) / 2 - 2px);
+    width: calc((100% - 87.5%) / 2);
+}
+
+.tablet:not(.landscape) > * {
+    margin: calc((100% - 87.5%) / 1) calc((100% - 87.5%) / 2);
+    max-width: 87.5%;
+}
+
+/* Tablet - Landscape */
+.tablet.landscape {
+    border-radius: 4.5% / 6%;
+}
+
+.tablet.landscape:before,
+.tablet.landscape:after {
+    transform: translateY(-50%);
+}
+
+.tablet.landscape:before {
+    left: calc((100% - 82.5%) / 2 / 2.5);
+    padding-top: calc((100% - 82.5%) / 2 / 7);
+    width: calc((100% - 82.5%) / 2 / 7);
+}
+
+.tablet.landscape:after {
+    padding-top: calc((100% - 82.5%) / 2 / 2 - 2px);
+    right: calc((100% - 82.5%) / 2 / 4);
+    width: calc((100% - 82.5%) / 2 / 2);
+}
+
+.tablet.landscape > * {
+    margin: calc((100% - 82.5%) / 4) calc((100% - 82.5%) / 2);
+    max-width: 82.5%;
+}
+
+
+
+
+
+
+/*** SMARTPHONE (Image should have 16:9 ratio) ***/
+.smartphone:after {
+    border-radius: 50%;
+}
+
+/* Portrait */
+.smartphone:not(.landscape) {
+    background-image: 
+        /* Camera */
+        radial-gradient(circle at 50% 2.75%, #e5e5e5 0.5%, transparent 0.5%),
+        /* Proximity Sensor */
+        radial-gradient(circle at 35% 6%, #e5e5e5 0.8%, transparent 0.8%);
+    border-radius: 12% / 6%;
+}
+
+.smartphone:not(.landscape):before,
+.smartphone:not(.landscape):after {
+    transform: translateX(-50%);
+}
+
+.smartphone:not(.landscape):before {
+    border-radius: calc((100% - 87.5%) / 1) / calc((100% - 87.5%) * 6.5);
+    padding-top: calc((100% - 87.5%) / 6);
+    max-width: calc((100% - 87.5%) * 1.5);
+    top: calc((100% - 87.5%) / 2.25);
+    width: 100%;
+}
+
+
+.smartphone:not(.landscape):after {
+    bottom: calc((100% - 87.5%) / 4.5);
+    padding-top: calc((100% - 87.5%) / 0.9 - 2px);
+    width: calc((100% - 87.5%) / 0.9);
+}
+
+.smartphone:not(.landscape) > * {
+    margin: calc((100% - 87.5%) * 2) calc((100% - 87.5%) / 2);
+    max-width: 87.5%;
+}
+
+/* Landscape */
+.smartphone.landscape {
+    background-image: 
+        /* Camera */
+        radial-gradient(circle at 2.75% 50%, #e5e5e5 0.5%, transparent 0.5%),
+        /* Proximity Sensor */
+        radial-gradient(circle at 6% 65%, #e5e5e5 0.8%, transparent 0.8%);
+    border-radius: 6% / 12%;
+}
+
+.smartphone.landscape:before,
+.smartphone.landscape:after {
+    transform: translateY(-50%);
+}
+
+.smartphone.landscape:before {
+    border-radius: calc((100% - 75.25%) * 6.5) / calc((100% - 75.25%) / 1);
+    border-radius: 42% / 6%;
+    padding-top: calc((100% - 75.25%) / 2.5);
+    left: calc((100% - 75.25%) / 4.5);
+    width: calc((100% - 75.25%) / 25);
+}
+
+.smartphone.landscape:after {
+    padding-top: calc((100% - 75.25%) / 2 / 1.75 - 2px);
+    right: calc((100% - 75.25%) / 2 / 4.5);
+    width: calc((100% - 75.25%) / 2 / 1.75);
+}
+
+.smartphone.landscape > * {
+    margin: calc((100% - 75.25%) / 8) calc((100% - 75.25%) / 2);
+    max-width: 75.25%;
+}
+
+.box {
+  width: 300px;
+  background: springgreen;
+  padding: 20px;
+  position: relative;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.box.open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.tab {
+  position: absolute;
+  right: 0;
+  background: black;
+  color: white;
+  padding: 30px;
+  -webkit-transform: rotate(90deg) translateY(-100%);
+          transform: rotate(90deg) translateY(-100%);
+}
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+#call2>* {
+  box-sizing: border-box;
+}
+
+#call2>h2, p {
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  padding-bottom: 1em;
+}
+
+#call2>h2 {
+  font-size: 3vw;
+  line-height: 1.25em;
+}
+@media (max-width: 800px) {
+  #call2>h2 {
+    font-size: 2em;
+  }
+}
+
+
+
+#call2>.btn {
+  display: inline-block;
+  padding: .75em 2em;
+  color: #191412;
+  font-family: Montserrat, sans-serif;
+  text-decoration: none;
+  background: #D1CBAF;
+  -webkit-transition: background 400ms, color 400ms;
+  transition: background 400ms, color 400ms;
+}
+#call2>.btn:hover {
+  background: #A2A674;
+}
+
+#call2>.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#call2>.callout {
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  padding: 6em 1em;
+  text-align: center;
+  background: -webkit-linear-gradient(top, #36302b 0%, #191412 100%);
+  background: linear-gradient(to bottom, #36302b 0%, #191412 100%);
+}
+#call2>.callout:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  height: 50%;
+  opacity: 0.6;
+  background-image: url(http://www.clker.com/cliparts/S/R/7/l/C/A/green-treeline-over-white-background-hi.png);
+  background-size: 85%;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  bottom: 0;
+}
+
+#call2>.callout__inner {
+  position: relative;
+  z-index: 5;
+}
+
+#call2>.callout__blurb {
+  max-width: 65%;
+  color: #D1CBAF;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  #call2>.callout__blurb {
+    max-width: 100%;
+  }
+}
+
+#call2>.callout__ctas a:first-of-type {
+  margin-right: 2em;
+}
+@media (max-width: 500px) {
+  #call2>.callout__ctas {
+    clear: both;
+    width: 100%;
+  }
+  #call2>.callout__ctas a {
+    margin-bottom: 1.5em;
+  }
+  #call2>.callout__ctas a:first-of-type {
+    margin-right: 0;
+  }
+}
+
+
+#grid3 {padding: 5px 7px 5px 7px;
+        margin-top:3vh;
+        }
+</style>
+</head>
+<body>
+<nav class="brandNav">
+  <div class="container">
+    <div class="brandNav__section pull-left" >
+      <a href="#" class="brandNav__item brandNav-active" style="box-shadow: none;background-color: transparent;">
+        <img  style="height: 19vw;padding: 5px 7px 5px 7px;margin-top: 27%;margin-left: -12%;" src="https://media.giphy.com/media/LrTB2MflsnaYE/giphy.gif">
+      </a>
+      <!--#youtube -->
+      <a href="#" class="brandNav__item">
+        <i class="blktxt-toplogos fa fa-youtube-square" style=""></i>
+      </a>
+       <!--#facebook-->
+         <a href="#" class="brandNav__item">
+        <i class="blktxt-toplogos fa fa-facebook-square" style=""></i>
+      </a>
+         <!--#whatsapp-->
+       <a href="#" class="brandNav__item">
+       <i class=" blktxt-toplogos fa fa-whatsapp"></i>
+      </a>
+         <!--#email-->
+       <a href="#" class="brandNav__item">
+       <i class=" blktxt-toplogos fa fa-envelope"></i>
+      </a>
+
+    </div>
+    <div class="brandlNav__section pull-right">
+      <a href="#" class="brandNav__item brandNavBlog">Visit the Blog</a> <!--##create and route pipes for a blog page.-->
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-default">
+
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+  </div>
+
+  <div id="mainNav" class="navbar-collapse collapse">
+    <div class="container">
+      <form class="nav navbar-form navbar-left" role="search" name="nav-search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right clearfix">
+        <li class="nav-halfblock"><a href="#">Register</a></li>
+        <li class="nav-halfblock"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Log In</a></li>
+        <li class="nav-fullblock"><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a></li>
+      </ul>
+    </div>
+    <nav class="siteNav">
+      <ul class="nav navbar-nav navbar-centered">
+        <li class="dropdown dropdown-large">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>
+
+          <ul class="dropdown-menu dropdown-menu-large">
+            <div class="container">
+              <div class="row">
+                <li class="col-sm-12 col-md-4">
+                  <ul>
+                    <li class="dropdown-header">GQ Beauty &amp; Essence Products</li>
+                    <li><a href="#">- For Sensitive Skin Care Products</a></li>
+                    <li><a href="#">- Kits and Combo Packages</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">- Gifts &amp; Accessories</a></li>
+                    <li><a href="#">- Goodies</a></li>
+                    <li class="divider"></li>
+                    <li style="color: #f30 !important;">Not Sure?</li>
+                    <li><a href="#">- GQ | B&amp;E&nbsp;Skin Care Guide</a></li>
+                  </ul>
+                </li>
+              <!--  <li class="col-sm-12 col-md-4">
+                  <ul>
+                    <li class="dropdown-header">Online Videos &amp; DVDs</li>
+                    <li><a href="#">DVDs (Online &amp; Physical)</a></li>
+                    <li><a href="#">Self-Care Video Packages</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">YTU At Home Program</a></li>
+                    <li><a href="#">&nbsp;</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Shop All Products</a></li>
+                  </ul>
+                </li> -->
+                <li class="col-sm-12 col-md-4">
+                  <ul>
+                    <li class="dropdown-header">Featured Product</li>
+                    <li>
+                      <a href="#"><img class="img-responsive" src="http://placehold.it/400x250"></a>
+                    </li>
+                  </ul>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </li>
+        <li class="dropdown dropdown-large">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Schedule Training Sessions<b class="caret"></b></a>
+
+          <ul class="dropdown-menu dropdown-menu-large">
+            <div class="container">
+              <div class="row">
+                <li class="col-sm-6">
+                  <ul>
+                                        <li class="dropdown-header">The Format</li>
+                    <li><a href="#">About The GQ | LMT <sup>&copy;</sup> Method</a></li>
+                    <li><a href="#">The GQ | LMT Book</a></li>
+                    <li><a href="#">GQ | LMT T-shirts</a></li>
+                                        <li class="divider"></li>
+                    <li class="dropdown-header">Open Mind &amp; Body Education</li>
+                    <li><a href="#">Live Trainings</a></li>
+                    <li><a href="#">Correspondence Courses</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Find a Licensed Massage Therapist</a></li>
+                    <li><a href="#">Become a GQ | B&amp;E Moon Club Member</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-6">
+                  <ul>
+                    <li class="dropdown-header">Weekly Roll Out</li>
+                    <li>
+                      <a href="#"><img class="img-responsive" src="http://placehold.it/400x250"></a>
+                    </li>
+                  </ul>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </li>
+        <li class="dropdown dropdown-large">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Yoga Time!<b class="caret"></b></a>
+
+          <ul class="dropdown-menu dropdown-menu-large">
+            <div class="container">
+              <div class="row">
+                <li class="col-sm-6">
+                  <ul>
+                    <li class="dropdown-header">The Format</li>
+                    <li><a href="#">About Yoga Time!<sup>&copy;</sup></a></li>
+                    <li><a href="#">Find a Class/Workshop</a></li>
+                                        <li><a href="#">Find A Certified Teacher</a></li>
+                    <li><a href="#">My Instructor's Schedule</a></li>
+                    <li class="divider"></li>
+                  
+                    <li class="divider"></li>
+
+                    <li><a href="#">Become a GQ Moon Member<sup>&copy;</sup> </a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-6">
+                  <ul>
+                    <li class="dropdown-header">Pose Of The Week</li>
+                    <li>
+                      <a href="#"><img class="img-responsive" src="http://placehold.it/400x250"></a>
+                    </li>
+                  </ul>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </li>
+        <li class="dropdown dropdown-large">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Self-Care Videos<b class="caret"></b></a>
+
+          <ul class="dropdown-menu dropdown-menu-large">
+            <div class="container">
+              <div class="row">
+                <li class="col-sm-4">
+                  <ul>
+                    <li class="dropdown-header">Body Areas</li>
+                    <li><a href="#">Neck</a></li>
+                                            <li><a href="#">Shoulder</a></li>
+                                            <li><a href="#">Lower Back</a></li>
+                                                                <li><a href="#">Core</a></li>
+                                            <li><a href="#">Hips</a></li>
+                                            <li><a href="#">Hamstring/IT Band</a></li>
+                                            <li><a href="#">Feet/Ankle</a></li>
+                                            <li><a href="#">Hand/Wrist</a></li>
+                                            <li><a href="#">Stress Relief</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-4">
+                  <ul>
+                    <li class="dropdown-header">Sports/Activities</li>
+                    <li><a href="#">Running</a></li>
+                    <li><a href="#">Cycling</a></li>
+                    <li><a href="#">Swimming</a></li>
+                    <li><a href="#">Golf</a></li>
+                    <li><a href="#">Tennis</a></li>
+                    <li><a href="#">Strength &amp; Conditioning</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-4">
+                  <div class="list-group">
+                                            <a href="#" class="list-group-item">
+                                                <h4 class="list-group-item-heading">This is a recent blog title</h4>
+                                                <p class="list-group-item-text">This is a snippet of a recent article. This is a snippet of a recent article[…]</p>
+                                            </a>
+                                            <a href="#" class="list-group-item">
+                                                <h4 class="list-group-item-heading">This is a recent blog title</h4>
+                                                <p class="list-group-item-text">This is a snippet of a recent article. This is a snippet of a recent article[…]</p>
+                                            </a>
+                                            <a href="#" class="list-group-item">
+                                                <h4 class="list-group-item-heading">This is a recent blog title</h4>
+                                                <p class="list-group-item-text">This is a snippet of a recent article. This is a snippet of a recent article[…]</p>
+                                            </a>
+                                        </div>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </li>
+       
+        <li class="dropdown dropdown-large">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Mission<b class="caret"></b></a>
+
+          <ul class="dropdown-menu dropdown-menu-large">
+            <div class="container">
+              <div class="row">
+                <li class="col-sm-6">
+                  <ul>
+                    <li class="dropdown-header">Learn More</li>
+                    <li><a href="#">About GQ | LMT</a></li>
+                    <li><a href="#">Work / Collaborate With GQ</a></li>
+                    <li><a href="#">Frequently Asked Questions</a></li>
+                  </ul>
+                </li>
+                <li class="col-sm-6">
+                  <ul>
+                    <li class="dropdown-header">Join In</li>
+                    <li><a href="#">The GQ | B&amp;E Moon Club</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="brand-centered">
+    <a class="navbar-brand" href="">
+      <img class="siteNavBrand img-responsive" style="margin-top: -3.25vh !important;height: 67px;width: 67px;" src="http://placehold.it/100x100">  <!--##create Logo and make same size-->
+    </a>
+  </div>
+
+</nav>
+
+
+<section class="content" id='mobileOnly'>
+
+  <div class="container" >
+    <div class="row" >
+      <div class="col-sm-12">
+        <p class="lead">Quote Of The Week: "quote is here placeholder quote -Logan Wilson -Master Placeholderman</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div style="position: fixed;padding:5px 7px 5px 7px;margin-top:-30vh;z-index: 999999 !important;margin-left: 30px" class="box"><a style="text-decoration: none !important;color: #fff;" class="tab" href="#">Quote of the Day</a>
+  <p> One's conversation is the mirror of their thoughts.</p>
+</div>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">    <!--##find 3 photos for carousel-->
+    <div class="item active">
+    	<!--#carousel 01-->
+      <img class="img-responsive" style="width: 100%;max-height: 64.5vh; "  src="https://image.freepik.com/free-photo/young-attractive-woman-in-virabhadrasana-iii-pose-white-studio_1163-2309.jpg">
+    </div>
+    <!--#carousel 02-->
+    <div class="item">
+      <img class="img-responsive" style="width: 100%;max-height: 64.5vh;" src="https://image.freepik.com/free-photo/rear-view-close-up-of-woman-perform-meditating-yoga-on-the-nature-background-in-the-morning_1423-728.jpg">
+    </div>
+    <!--#carousel 03-->
+    <div class="item">
+      <img class="img-responsive" style="width: 100%;max-height: 64.5vh;" src="https://image.freepik.com/free-photo/silhouette-of-woman-doing-yoga-on-a-beach_1286-47.jpg">
+    </div>
+  </div>
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+<!--#whisper brand lowlights-->
+<section class="as-seen-on">
+  <div class="as-seen-on">
+    <h5>Worked With the Likes of</h5>
+    <a href="#"><img src="https://s13.postimg.org/4gfj85wjr/asob_1.png"></a>
+    <a href="#"><img src="https://s10.postimg.org/l2gbtugkp/asob_2.png"></a>
+  </div>
+</section>
+<!--/-->
+<div id="grid3" >
+  
+   <header id="banner" style="background-color: #eaeaea;background-image: url(https://image.freepik.com/free-vector/hand-painted-natural-background_23-2147517718.jpg);background-size: cover;">
+    <h1 class="text-uppercase"><i class="fa fa-fw fa-columns"> </i>
+      <span>GQ | LMT </span>
+      <small>Example Grid Layout</small> 
+      <small>(<em>cf</em>. <a href="https://getbootstrap.com/components/" target="_blank">
+        getbootstrap.com</a>)</small>
+    </h1>
+  </header>
+  
+  <main style="background-color: #fafafa;">
+    <div class="row row-height-full">
+      <!-- EXAMPLE USE OF BOOTSTRAP COL- TIERS -->
+      <div class="col-xs-12 col-sm-4 col-md-4 col-full-height column-bg"> 
+        <header>
+          <h2>Article Heading</h2>
+        </header>
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae placeat nulla labore est quia, 
+            deleniti molestiae dolorum. Non tempora ab rerum odio dolorem iure unde, debitis, molestiae, 
+            laudantium voluptates explicabo.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            At molestias, omnis ad tempora alias possimus beatae assumenda sequi repellendus, nihil amet 
+            tenetur sint natus quae culpa animi ipsa unde. Temporibus!</p>
+        </article>
+      </div>
+      
+      <div class="col-xs-12 col-sm-4 col-md-4 col-full-height column-bg">
+          <header>
+            <h2>Article Heading</h2>
+          </header>
+          <article>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae placeat nulla labore est quia, 
+              deleniti molestiae dolorum. Non tempora ab rerum odio dolorem iure unde, debitis, molestiae, 
+              laudantium voluptates explicabo.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae placeat nulla labore est quia, 
+              deleniti molestiae dolorum. Non tempora ab rerum odio dolorem iure unde, debitis, molestiae, 
+              laudantium voluptates explicabo.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+              At molestias, omnis ad tempora alias possimus beatae assumenda sequi repellendus, nihil amet 
+              tenetur sint natus quae culpa animi ipsa unde. Temporibus!</p>
+          </article>
+        </div>
+      
+      <div class="col-xs-12 col-sm-4 col-md-4 col-full-height column-bg">
+        <header>
+          <h2>Article Heading</h2>
+        </header>
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae placeat nulla labore est quia, 
+            deleniti molestiae dolorum. Non tempora ab rerum odio dolorem iure unde, debitis, molestiae, 
+            laudantium voluptates explicabo.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            At molestias, omnis ad tempora alias possimus beatae assumenda sequi repellendus, nihil amet 
+            tenetur sint natus quae culpa animi ipsa unde. Temporibus!</p>
+        </article>
+      </div>
+    </div><!-- /END ROW -->
+  </main>
+</div>
+<footer class="aliceblue-bg grey-border">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="text-center"><a href="#" target="_top">Bootstrap 3 Example</a></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="text-center">
+          <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+          <span>Blah blah blah footer content</span>
+          <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+      
+
+
+
+</div>
+<!--#devices-->
+
+  <hr>
+      
+        <h2><a name="desktop"></a>Desktop</h2>
+        <div class="device desktop" style="background-color: #fafafa;">
+            <img src="https://dl2.pushbulletusercontent.com/6FC3EpIbt9HaDtoYfBJZuhWa2Lpy71tE/GQdesktop1.png" alt="Desktop" />
+        </div>
+
+        <hr>
+      
+        <h2><a name="tablet"></a>Tablet</h2>
+        <p>For best results, image should have 4:3 aspect ratio.</p>
+        <h3><a name="tablet-portrait"></a>Portrait</h3>
+        <div class="device tablet" style="background-color: #0a0a0a;">
+            <img src="http://erinesullivan.com/wp-content/uploads/2017/08/erinesullivan-tablet-portrait.jpg" alt="Tablet - Portrait" />
+        </div>
+
+        <h3><a name="tablet-landscape"></a>Landscape</h3>
+        <div class="device tablet landscape" style="background-color: #0a0a0a;">
+            <img src="http://erinesullivan.com/wp-content/uploads/2017/08/erinesullivan-tablet-landscape.jpg" alt="Tablet - Landscape" />
+        </div>
+
+        <hr>
+      
+        <h2><a name="smartphone"></a>Smartphone</h2>
+        <p>For best results, image should have 16:9 aspect ratio.</p>
+        <div id="gradient"></div>
+        <h3><a name="smartphone-portrait"></a>Portrait</h3>
+        <div class="device smartphone" style="background-color: #0a0a0a;">
+            <img src="http://erinesullivan.com/wp-content/uploads/2017/08/erinesullivan-mobile-portrait.jpg" alt="Mobile - Portrait" />
+        </div>
+
+        <h3><a name="smartphone-landscape"></a><hr></h3>
+        <div class="device smartphone landscape" style="background-color: #0a0a0a;">
+            <img src="http://erinesullivan.com/wp-content/uploads/2017/08/erinesullivan-mobile-landscape.jpg" alt="Mobile - Landscape" />
+        </div>
+
+    </div>
+</div>
+<div id="call2">	
+<div class="wrap">
+  <section class="callout">
+    <div class="callout__inner">
+      <div class="callout__blurb" style="width: 100%;background-color: transparent; color: #fff;padding: 10px 14px 10px 14px;">
+      	
+       <!-- <h2>Learn More About Our GQ Bae</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Num igitur eum postea censes anxio animo aut sollicito fuisse? Non quam nostram quidem, inquit Pomponius iocans; Quo plebiscito decreta a senatu est consuli quaestio Cn. An vero displicuit ea, quae tributa est animi virtutibus tanta praestantia? Eiuro, inquit adridens</p>
+      </div>-->
+      <div class="callout__ctas">
+        <a class="btn" href="#" style="background-color: #000;border-radius: 0;padding: 5px 7px 5px 7px;">Make Contact</a>
+        <a class="btn btn--naked" href="#" style="background-color: #000;border-radius: 0;padding: 5px 7px 5px 7px;">Our Mission</a>
+        <a class="btn" href="#" style="background-color: #000;border-radius: 0;padding: 5px 7px 5px 7px;">Make Contact</a>
+
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+<!--##scripts-->
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script>$("a[href='#top']").click(function() {
+$("html, body").animate({ scrollTop: 0 }, "slow");
+return false;
+});
+</script>
+<script>'use strict';
+
+var tab = document.querySelector('.tab');
+
+tab.addEventListener('click', function () {
+  this.parentElement.classList.toggle('open');
+});tw;</script>
+
+</body>
+</html>
