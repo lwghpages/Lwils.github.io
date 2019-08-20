@@ -1,303 +1,225 @@
-
 <!DOCTYPE html>
-<html lang="en" class="no-js" >
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Canigan INTL</title>
-    <meta name="description" content="Experimental demos of the tutorial on how to use CSS Masks for creating interesting looking slide transitions" />
-    <meta name="keywords" content="css masks, slideshow, transition, animation, web design, effect" />
-    <meta name="author" content="Canigan Intl" />
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="css/component.css" />
-    <script src="js/modernizr-custom.js"></script>
-    <style>
-      /* Core Styles */
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #333;
-  color: #fff;
-  font-size: 1.1em;
-  line-height: 1.5;
-  text-align: center;
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canigan INTL</title>
+	<link rel="stylesheet" href="LinkYourOwnStylesheet.css">
+	<style>
+		body {
+   background-color: rgba(255, 255, 255, 1);
+   margin: 0px;
 }
 
-img {
-  display: block;
-  width: 100%;
-  height: auto;
+#underConstruction {
+   border: 2px solid orange;
+   position: absolute;
+   font-size: 3rem;
+   font-family: ABeeZee;
+   top: 17%;
+   left: 12%;
+   transform: rotate(-25deg);
 }
 
-h1,
-h2,
-h3 {
-  margin: 0;
-  padding: 1em 0;
+#topBar {
+   position: fixed;
+   top: 0%;
+   width: 100%;
+   height: 80px;
+   background-color: rgba(255, 255, 255, 0.9);
+   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+   z-index: 5;
 }
 
-p {
-  margin: 0;
-  padding: 1em 0;
+#initials {
+   display: block;
+   width: 100px;
+   min-width: 100px;
+   height: 80px;
+   font-size: 3.2rem;
+   line-height: 80px;
+  /* font-family: 'Passion One', cursive;*/
+   text-align: center;
+   color: rgba(109, 149, 59, 1);
+   background-color: black;
+   text-decoration: none;
 }
 
-.btn {
-  display: inline-block;
-  background: #333;
-  color: #fff;
-  text-decoration: none;
-  padding: 1em 2em;
-  border: 1px solid #666;
-  margin: 0.5em 0;
+#navWrapper {
+   width: 100%;
+   position: fixed;
+   top: 0px;
+   z-index: 6;
 }
 
-.btn:hover {
-  background: #eaeaea;
-  color: #333;
+nav li {
+   line-height: 80px;
+   padding-right: 50px;
+   display: inline-block;
+  /* font-family: ABeeZee;*/
+   
+   transition: 0.5s;
+   
 }
 
-/* Header Showcase */
-
-#showcase {
-  min-height: 450px;
-  color: #fff;
-  text-align: center;
+nav a {
+   text-decoration: none;
+   color: black;
+   transition: 0.23s;
+   opacity: 0.5;
 }
 
-#showcase .bg-image {
-  position: absolute;
-  background: #333
-    url("https://images.unsplash.com/photo-1528498033373-3c6c08e93d79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 450px;
-  z-index: -1;
-  opacity: 0.4;
+nav a:hover {
+   box-shadow: 0px 5px 4px -4px rgba(109, 149, 59, 1);
+   opacity: 1.0;
 }
 
-#showcase h1 {
-  padding-top: 100px;
-  padding-bottom: 0;
+#centerColumn {
+   width: 50%;
+   margin: auto;
 }
 
-#showcase .content-wrap,
-#section-a .content-wrap {
-  padding: 0 1.5em;
+#introText {
+   margin-top: 170px;
+   font-size: 4rem;
+   font-family: "ABeeZee";
+   padding-bottom: 10px;
+ /*  border-bottom: 5px solid rgba(141, 56, 90, 0.5);*/
 }
 
-/* Section A */
-
-#section-a {
-  background: #eaeaea;
-  color: #333;
-  padding-bottom: 2em;
+#subIntroText {
+   margin-top: 20px;
+   margin-bottom: 130px;
 }
 
-/* Section B */
-
-#section-b {
-  padding: 2em 1em 1em;
+#subIntroText p {
+   font-family: ABeeZee;
+   font-size: 2.5rem;
+   line-height: 2.3ch;
+   color: rgba(0, 0, 0, 0.7);
 }
 
-#section-b ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+#subIntroText p a {
+   color: rgba(141, 0, 56, 0.8);
+   text-decoration: none;
 }
 
-#section-b li {
-  margin-bottom: 1em;
-  background: #fff;
-  color: #333;
+#divider {
+   height: 10px;
+   width: 100%;
+   background-color: rgba(109, 149, 59, 1);
+   margin-top: 50px;
 }
 
-.card-content {
-  padding: 1.5em;
+#projectGalleryWrapper {
+   margin-bottom: 100px;
 }
 
-/* Section C */
-
-#section-c {
-  background: #fff;
-  color: #333;
-  padding: 2em;
+.projectTile {
+   position: relative;
+   width: calc(100% /3);
+   float: left;
 }
 
-/* Section D / Boxes */
-
-#section-d .box {
-  padding: 2em;
-  color: #fff;
+.projectTile img {
+   max-width: 100%;
+   display: block;
 }
 
-#section-d .box:first-child {
-  background: #2690d4;
+.fadeInOnHover {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   opacity: 0;
+   transition: 0.3s;
 }
 
-/* Footer */
-
-#main-footer {
-  padding: 2em;
-  background: #000;
-  color: #fff;
-  text-align: center;
+.fadeInOnHover:hover {
+   opacity: 1.0;
 }
 
-#main-footer a {
-  color: #2690d4;
-  text-decoration: none;
+.titleBackground {
+   position: absolute;
+   bottom: 0px;
+   width: 100%;
+   padding-top: 2%;
+   padding-bottom: 2%;
+   text-align: center;
+   background-color: rgba(0, 0, 0, 0.5);
+   color: white;
+   font-family: ABeeZee;
+   font-size: 25px;
 }
+	</style>
 
-/* Media Queries */
+</head>
+<body>
+<!-- html goes here in body -->
+<!-- 
+Inspirations:
+   http://www.alexcornell.com/
 
-@media (min-width: 700px) {
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
-  }
+Resources:
+   https://fonts.google.com/
 
-  #section-a .content-text {
-    columns: 2;
-    column-gap: 2em;
-  }
+Kris:
+ 
+-->
 
-  #section-a .content-text p {
-    padding-top: 0;
-  }
-
-  .content-wrap,
-  #section-b ul {
-    grid-column: 2/4;
-  }
-
-  .box,
-  #main-footer div {
-    grid-column: span 2;
-  }
-
-  #section-b ul {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  #section-b li {
-    width: 31%;
-  }
-}
+<head>
+   <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
+   <link href="krisgoorhuis.github.io/css/style.css" type="text/css" rel="stylesheet">
+   <link href="D:\Git Projects\Personal Website\css\style.css" type="text/css" rel="stylesheet">
+</head>
 
 
-#colorChg {
-  color: #f90;
-}
-#colorChg:hover {
-  color:#333;
-}
+<body>
 
-    </style>
-  </head>
-  <body>
-<!-- Header Showcase -->
-<header id="showcase" class="grid">
-  <div class="bg-image"></div>
-  <span style="top: 0;left: 5px;"><img style="width: 50vw;height: auto;border-radius: 2.5em;padding: 5px 7px 5px 7px;" src="https://dl2.pushbulletusercontent.com/hIGjqRYYpE7zLiztqeCIY9VYbB8sxsJ7/image.png" alt="logo canigan"></span>
-  <div class="content-wrap">
-    <h1>Canigan Intl</h1>
-    <p>Do Shaklee HealthPrint</p>
-    <a href="#section-b" class="btn">Read More</a>
-  </div>
-</header>
+   <div id="underConstruction" style='margin-top:120px;'>Under Construction!</div>
 
-<!-- Main Area -->
-<main id="main">
-  <img src="http://images.shaklee.com/00_2016_assets/difference/16-353_ShakleeDifferenceBanners_ShakleeDotCom_960x330_ENG[2]-noCTA.jpg" alt="shaklee banner">
-  <!-- Section A -->
+   <div id="topBar">
+      <a id="initials" href="#">C</a>
+      <img src="https://dl3.pushbulletusercontent.com/8v3eyXlAsomqSap5oklivqJ1vd5ijxRF/mommaLogo.png" style="width: 30rem;height:20rem;position: absolute;top: 20px;left: 10px;"></img>
+   </div>
 
-  <section id="section-a" class="grid">
-    <div class="content-wrap">
-      <iframe style="width: 90vw !important;position: relative;left: 50%;transform: translate(-50%);height: 100vh;" src="https://www.bbb.org/us/ca/pleasanton/profile/nutrition/shaklee-corporation-1116-11381#bbblogo"></iframe>
-    <!--   <h2 class="content-title" style="padding: 5px 7px 5px 7px;line-height: 5vh; max-width: 67vw;margin:auto;">Everything we do has been designed <br> In Harmony with Nature®. 
-Discover our difference.</h2>
-<h4>We conduct over 100,000 quality tests a year to make sure that our products are safe for you and your family.</h4> -->
 
-      <div class="content-text">
+   <div id="centerColumn">
 
-        <p></p>
+
+      <div id="navWrapper">
+         <nav style="font-size: 1.68rem;">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Weblog</a></li>
+           
+         </nav>
       </div>
-    </div>
-  </section>
-<img src="http://images.shaklee.com/shaklee/images/SevenDayCleanseBanENG.jpg" alt="">
-  <!-- Section B -->
-  <section id="section-b" class="grid">
-    <ul>
-      <li>
-        <div class="card">
-          <img src="https://images.shaklee.com/healthprint/landing/hp-landing-lifestyle-01a-usen.jpg" alt="">
-          <div class="card-content">
-            <h2><button style="padding: 5px 7px 5px 7px;"><a id="colorChg"  href="https://www.shaklee.com/us/en/healthprint">Take the Shaklee Healthprints</a></button></h1>
 
 
-            <h3 class="card-title">Personalized Health Recommendations</h3>
-            <p>Based on the work of leading public health institutions, Nobel Prize and the award winning doctors and scientists.</p>
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <div class="card">
-         <iframe width="100%" height="180px" src="https://www.youtube.com/embed/TkEevQZyWKI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <div class="card-content">
-            <h3 class="card-title">Green Cleaning</h3>
-            <p> Oprah Winfrey shares why she loves Shaklee products so much.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1523901839036-a3030662f220?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" alt="">
-          <div class="card-content">
-            <h3 class="card-title">Weight Loss</h3>
-            <p>Our product ingredients are carefully selected to meet our high performance and screening standards, often surpassing the standards of the USP, a scientific, nonprofit organization that sets federally recognized public standards of quality for medicines, dietary supplements, and foods.</p>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </section>
-<img src="http://images.shaklee.com/shaklee/images/HealthyWeightChallengeBanENG.jpg" alt="female middle aged workoutgear">
-  <!-- Section C -->
-  <section id="section-c" class="grid">
-    <div class="content-wrap">
-      <h2 class="content-title">We handle all of your Shaklee needs</h2>
-      <p>We believe in the safety and performance of all our products. That’s why we stand behind every single one with a 100% guarantee or your money back. No questions asked. That’s The Shaklee Difference.</p>
-    </div>
-  </section>
-<img src="http://images.shaklee.com/shaklee/images/MoistureSerumBanENG.jpg" alt="hyrdration shaklee">
-  <!-- Section D -->
-  <section id="section-d" class="grid">
-    <div class="box">
-      <h2 class="content-title">Contact Us</h2>
-      <p>Candy Wilson..</p>
-      <p>candy@caniganintl.com</p>
-    </div>
-    <div class="box">
-      <h2 class="content-title">Every Shaklee Product Is 100% Guaranteed.</h2>
-      <p>We believe in the safety and proven performance of all of our products. If you're not satisfied with any of our products, you can send them back to us for a full refund, even if the container is empty.
-
-</p>
-    </div>
-  </section>
-</main>
+      <h1 id="introText" style=''>
+       
+      </h1>
+<br><br>
+      <div id="subIntroText" style='margin-top:25vh'>
+         <p>But, really, I'm glad you're here.</p>
+         <p>Check Out my shaklee website <br>  <a href="https://www.shaklee.com" target="_blank"> Candy Wilson Distributor Site</a></p>
+       
+      </div>
 
 
+   </div> <!-- centerColumn close -->
 
-<!-- Footer -->
-<footer id="main-footer" class="grid">
-  <div>LoganWeb Solutions</div>
-  <div>Logo By <a href="#" target="_blank">LoganWIlson Media</a></div>
-</footer>
+
+   <div id="divider"></div>
+ 
+      <!-- Project gallery -->
+
+      
+    
+
+</body>
+
+
+<script>//javascript goes in script tag</script>
+</body>
+</html>
