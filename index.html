@@ -352,24 +352,48 @@ footer ul li a i {
   width: 25px ;
 }
 
+/*under hero and splash info*/
+.next{
+  max-width: 100vw;
+  width: 100%;
+  height: 1000vh;
+  background-color: purple;
+  display: block;
+  margin-top: 30px;
+}
+
 .gridLogan {
     
     display: grid;
     width: 100%;
     height: auto;
-    background-color: rgba(0,50,130,1);
+    max-width: 100vw;
+    /*background-color: rgba(0,50,130,1);*/
     grid-template-rows: repeat(auto-fit,1fr);
-    box-sizing: border-box;
+    justify-content: center;
 
- 
-  box-sizing: border-box;
+    background-color: #dbe5dc;
+background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10h10v10H0V10zM10 0h10v10H10V0z' fill='%23c4f0d7' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
-.prolly {
+
+.ui-grid-item {
   height: auto;
   border: 3px solid red;
   text-align: center;
 
 }
+.ui-grid-item img {
+    object-fit: cover;
+    max-width: 80vw;
+}
+.ui-grid-item p {
+    font-weight: bold;
+    max-width: 80vw;
+    color: green;
+    padding: 0 20px 0 20px;
+}
+
+
 
 .content-headline {
   height: 100px;
@@ -443,14 +467,7 @@ transition-timing-function: ease-in;
 }
 /*.mood:hover{background-color: red;}*/
 
-.next{
-  max-width: 100vw;
-  width: 100%;
-  height: 100vh;
-  background-color: purple;
-  display: block;
-  margin-top: 30px;
-}
+
 
 
 </style>
@@ -474,10 +491,10 @@ transition-timing-function: ease-in;
             </li>
             <!-- <li><a class='active' href="#"><i class="icon-star"></i> Now Playing</a></li> -->
             <br>
-            <li><a href="#"><i class="icon-info"></i>Join Today</a></li>
-            <li><a href="#"><i class="icon-app"></i>About Us</a></li>
-            <li><a href="#"><i class="icon-car"></i>Get A Car</a></li>
-            <li><a href="#"><i class="icon-envelope"></i>Contact Us</a></li>
+            <li><a href="#"><!-- <i class="icon-info"></i> -->Join Today</a></li>
+            <li><a href="#"><!-- <i class="icon-app"></i> -->About Us</a></li>
+            <li><a href="#"><!-- <i class="icon-car"></i> -->Get A Car</a></li>
+            <li><a href="#"><!-- <i class="icon-envelope"></i> -->Contact Us</a></li>
           </ul>
         </nav> <!-- //Drawer-Nav -->
       </section><!-- //drawer -->
@@ -503,7 +520,7 @@ transition-timing-function: ease-in;
   window.onLoad(setTimeout(moodLight, 1300));
 
 </script>
-              <h2 style="max-width: 90vw;line-height: 0.95;">Begin With Shaklee HealthPrint</h2>
+              <h2 style="max-width: 90vw;line-height: 1;">Begin With Shaklee HealthPrint</h2>
               <h5 style="margin-top: -200px;padding-left: 25px;width: 67vw;text-shadow: 1px 2px 1px rgba(255,230,255,0.68);filter: contrast(1.5);transform: translate3d(0,30px,0);font-size: 1.15em;color: #03b;">Personalize your health plan &amp; Prove it to yourself!</h5>
              </div>
             <aside>
@@ -535,20 +552,23 @@ transition-timing-function: ease-in;
       </section><!-- //Main -->
       <div class="next">
         <div class="gridLogan">
-          <div class="prolly" style="object-fit: cover;margin-top: 10px;">
+          <div class="ui-grid-item" style="object-fit: cover;margin-top: 10px;">
 
             <iframe style="padding: 5px 7px 5px 7px;max-width: 100vw;" src="https://shaklee.tv/v.ihtml/player.html?source=share&photo%5fid=53900876" width="100%" height="352" frameborder="0" border="0" scrolling="no" allowfullscreen="1" mozallowfullscreen="1" webkitallowfullscreen="1" allow="autoplay; fullscreen"></iframe></div>
-          <div class="prolly">hey2</div>
-          <div class="prolly">hey3</div>
-           <div class="prolly">hey</div>
-          <div class="prolly">hey2</div>
-          <div class="prolly">hey3</div>
-          <div class="prolly">hey</div>
-          <div class="prolly">hey2</div>
-          <div class="prolly">hey3</div>
-           <div class="prolly">hey</div>
-          <div class="prolly">hey2</div>
-          <div class="prolly">hey3</div>
+          <div class="ui-grid-item">
+            <p>The 7 Day Cleanse with Shaklee's non-GMO herbs are a gentle way to clean the liver and balance the gut microbiome.</p><p>Do you know how many trillions of bad bacteria, viruses and parasites are living in us? To get started,</p>
+ <h3>call or text me at 847-826-1121, Candy</h3>
+<img src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-9/p960x960/69548651_3092225967485519_5272405941654913024_o.jpg?_nc_cat=101&_nc_oc=AQm8SEU3GVIB4Q__0817FstXg1FedTnkwouaTS6jN5f98sZOwl-dk5w5rhWiaXKTflk&_nc_ht=scontent-ort2-2.xx&oh=d58e98cee995dc47aa7ad8d1ba369d50&oe=5E4AFAFA" alt=""></div>
+          <div class="ui-grid-item">hey3</div>
+           <div class="ui-grid-item">hey</div>
+          <div class="ui-grid-item">hey2</div>
+          <div class="ui-grid-item">hey3</div>
+          <div class="ui-grid-item">hey</div>
+          <div class="ui-grid-item">hey2</div>
+          <div class="ui-grid-item">hey3</div>
+           <div class="ui-grid-item">hey</div>
+          <div class="ui-grid-item">hey2</div>
+          <div class="ui-grid-item">hey3</div>
         </div>
       </div>
 
