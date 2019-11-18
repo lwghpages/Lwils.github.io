@@ -378,14 +378,16 @@ background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox=
 
 .ui-grid-item {
   height: auto;
-  border: 3px solid red;
+  /*border: 3px solid red;*/
   text-align: center;
 
 }
 .ui-grid-item img {
     object-fit: cover;
     max-width: 80vw;
+    border-radius: 0.5em;
 }
+
 .ui-grid-item p {
     font-weight: bold;
     max-width: 80vw;
@@ -467,8 +469,34 @@ transition-timing-function: ease-in;
 }
 /*.mood:hover{background-color: red;}*/
 
+.settings {
+  transition: all 2.3s
+};
+
+.border-radius-logan {
+  border-radius: 0.5em;
+}
+
+.iphone-container{
+  height:700px;
+  position:relative;
+  z-index:3;
+}
 
 
+.bubble1{
+  width: 7em;
+  height: 2em;
+  background-color: rgb(0, 153, 255);
+  z-index: 99;
+  position: relative; 
+  top: 170px; 
+  left: -100px;
+  transition: all 1s ease 0s;
+  transform: translate3d(-3em, 0px, 0px);
+  border-radius: 0.5em; 
+  padding: 5px 7px;
+}
 
 </style>
 
@@ -512,12 +540,21 @@ transition-timing-function: ease-in;
 
               <div class="mood"></div>
               <script >
+  function cogSpin (degreeOfTurn) {
+    document.querySelector('.settings').style.transform = degreeOfTurn;
+  }
+
+
   function moodLight () {
     // body... 
   
   const greenBar = document.querySelector('.mood');
  greenBar.style.width = '100%'};
+
+ // call the functions
   window.onLoad(setTimeout(moodLight, 1300));
+  cogSpin('rotate(-180deg)');
+
 
 </script>
               <h2 style="max-width: 90vw;line-height: 1;">Begin With Shaklee HealthPrint</h2>
@@ -548,9 +585,12 @@ transition-timing-function: ease-in;
             </ul>
            <!--  <button id="collapse-toggle"><i class="icon-chevron-up"></i></button> -->
           </footer>
+
         </article>
       </section><!-- //Main -->
+      
       <div class="next">
+
         <div class="gridLogan">
           <div class="ui-grid-item" style="object-fit: cover;margin-top: 10px;">
 
@@ -559,8 +599,38 @@ transition-timing-function: ease-in;
             <p>The 7 Day Cleanse with Shaklee's non-GMO herbs are a gentle way to clean the liver and balance the gut microbiome.</p><p>Do you know how many trillions of bad bacteria, viruses and parasites are living in us? To get started,</p>
  <h3>call or text me at 847-826-1121, Candy</h3>
 <img src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-9/p960x960/69548651_3092225967485519_5272405941654913024_o.jpg?_nc_cat=101&_nc_oc=AQm8SEU3GVIB4Q__0817FstXg1FedTnkwouaTS6jN5f98sZOwl-dk5w5rhWiaXKTflk&_nc_ht=scontent-ort2-2.xx&oh=d58e98cee995dc47aa7ad8d1ba369d50&oe=5E4AFAFA" alt=""></div>
-          <div class="ui-grid-item">hey3</div>
-           <div class="ui-grid-item">hey</div>
+          <div class="ui-grid-item"><p>The 7 Day Cleanse with Shaklee's non-GMO herbs are a gentle way to clean the liver and balance the gut microbiome.</p><p>Do you know how many trillions of bad bacteria, viruses and parasites are living in us? To get started,</p>
+            <img src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-0/p180x540/38702089_2224417267599731_8060933636339269632_o.jpg?_nc_cat=101&_nc_oc=AQkqjcjJUKollD9uELUHBzX_mT5cZ3F1R8b2_Sow-yU-kHBBHkPXw3kKMon32BqCSfQ&_nc_ht=scontent-ort2-2.xx&oh=a8c901d26a53be19d3099c0bae8e2014&oe=5E896159" alt="">
+<ul>
+  <li class="soc-link"><a href="https://www.facebook.com/CaniganIntl">Canigan Intl @ Facebook</a></li>
+ 
+</ul>
+          </div>
+           <div class="ui-grid-item">
+            <div class="div" style="display:flex;height: 100vh;width: 100%;background: #f90 url(https://dl3.pushbulletusercontent.com/MRhSw6h0EVn3uT87jY7uRtngG8PRxxag/loShakApp.jpg) fixed no-repeat;justify-content: center;align-content: center;background-size: 100%;background-position: top;">
+
+                <div class="iphone-container" style="display: flex;justify-content: center;padding-top: 22vh;">
+        <img style="height: 450px;width: auto;" src="https://dl3.pushbulletusercontent.com/NHXVjWzsriUlOZmiY0yceyi1svDhwtWh/iphoneTransparent.77413c60_2.png" alt="iphone with white background">
+         <div class="bubble1">
+                <h5 style="margin-top: 0.25em;">shakleee</h5>
+              </div>
+              <div class="bubble2">
+                <h5></h5>
+              </div>
+              <div class="bubble3">
+                <h5></h5>
+              </div>
+              <div class="bubble4">
+                <h5></h5>
+              </div>
+              <div class="bubble5">
+                <h5></h5>
+              </div>
+      </div>
+
+              
+            </div>
+          </div>
           <div class="ui-grid-item">hey2</div>
           <div class="ui-grid-item">hey3</div>
           <div class="ui-grid-item">hey</div>
